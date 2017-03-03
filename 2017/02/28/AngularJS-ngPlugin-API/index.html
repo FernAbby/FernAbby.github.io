@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://FernAbby.com/2017/02/28/AngularJS-ngPlugin-API/index.html">
 <meta property="og:site_name" content="FernAbby's Notes">
 <meta property="og:description" content="用户系统／业务系统AngularJS组件库常用组件API.">
-<meta property="og:updated_time" content="2017-03-02T03:46:29.000Z">
+<meta property="og:updated_time" content="2017-03-02T10:43:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJS ngPlugin API">
 <meta name="twitter:description" content="用户系统／业务系统AngularJS组件库常用组件API.">
@@ -428,6 +428,33 @@
 </ul>
 <h2 id="stDateFormat服务"><a href="#stDateFormat服务" class="headerlink" title="stDateFormat服务"></a>stDateFormat服务</h2><h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><p>获得YY-MM-DD格式日期<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">stDateFormat.date(d);</div></pre></td></tr></table></figure></p>
 <h3 id="time"><a href="#time" class="headerlink" title="time"></a>time</h3><p>获得回距1970年1月1日之间的毫秒数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">stDateFormat.time(d);</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="stValidate指令"><a href="#stValidate指令" class="headerlink" title="stValidate指令"></a>stValidate指令</h2><ul>
+<li>name(dy-name): 唯一性，必写项</li>
+<li>trigger: 触发验证的事件</li>
+<li>validateMax(Msg): 最大值验证（&lt;=）</li>
+<li>validateMin(Msg): 最小值验证（&gt;=）</li>
+<li>validateNotBlankMsg : 不能为空验证</li>
+<li>validateMobileMsg: 手机号码验证()</li>
+<li>validateTelMsg: 电话验证</li>
+<li>validateIdNoMsg: 身份证验证</li>
+<li>validateEmailMsg: 邮箱验证</li>
+<li>validateAlphabetMsg： 数字字母验证</li>
+<li>validateLenMax: 最大长度验证（&lt;=）</li>
+<li>validateLenMin(Msg): 最小长度验证（&gt;=）</li>
+<li>validateLicenseMsg:</li>
+<li>validatePast(Msg):</li>
+<li>validateRepeat(Msg):</li>
+<li>validateNumberMsg:</li>
+<li><p>validateIntegerMsg:</p>
+<pre><code>validatePositiveNumberMsg:&apos;@validatePositiveNumberMsg&apos;,
+   validateDecimal: &apos;@validateDecimal&apos;,
+   validateDecimalMsg: &apos;@validateDecimalMsg&apos;,
+   validateUrlMsg: &apos;@validateUrlMsg&apos;,
+   validatePasswordMsg: &apos;@validatePasswordMsg&apos;
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"stValidate"</span> <span class="attr">dy-name</span>=<span class="string">"name"</span> <span class="attr">validate-len-max</span>=<span class="string">"60"</span> <span class="attr">validate-len-max-msg</span>=<span class="string">"不能超过60位"</span> <span class="attr">validate-not-blank-msg</span>=<span class="string">"不能为空"</span> <span class="attr">trigger</span>=<span class="string">"focus"</span> <span class="attr">ng-model</span>=<span class="string">"postData.name"</span>/&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -665,7 +692,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#alert服务"><span class="nav-number">1.</span> <span class="nav-text">alert服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#alert"><span class="nav-number">1.1.</span> <span class="nav-text">alert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#confirm"><span class="nav-number">1.2.</span> <span class="nav-text">confirm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ngSubmit服务"><span class="nav-number">2.</span> <span class="nav-text">ngSubmit服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stModal服务"><span class="nav-number">3.</span> <span class="nav-text">stModal服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stDateFormat服务"><span class="nav-number">4.</span> <span class="nav-text">stDateFormat服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-number">4.1.</span> <span class="nav-text">date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time"><span class="nav-number">4.2.</span> <span class="nav-text">time</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#alert服务"><span class="nav-number">1.</span> <span class="nav-text">alert服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#alert"><span class="nav-number">1.1.</span> <span class="nav-text">alert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#confirm"><span class="nav-number">1.2.</span> <span class="nav-text">confirm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ngSubmit服务"><span class="nav-number">2.</span> <span class="nav-text">ngSubmit服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stModal服务"><span class="nav-number">3.</span> <span class="nav-text">stModal服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stDateFormat服务"><span class="nav-number">4.</span> <span class="nav-text">stDateFormat服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-number">4.1.</span> <span class="nav-text">date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time"><span class="nav-number">4.2.</span> <span class="nav-text">time</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stValidate指令"><span class="nav-number">5.</span> <span class="nav-text">stValidate指令</span></a></li></ol></div>
             
 
           </div>
