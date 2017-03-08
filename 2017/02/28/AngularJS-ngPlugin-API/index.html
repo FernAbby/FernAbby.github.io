@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://FernAbby.com/2017/02/28/AngularJS-ngPlugin-API/index.html">
 <meta property="og:site_name" content="FernAbby's Notes">
 <meta property="og:description" content="用户系统／业务系统AngularJS组件库常用组件API.">
-<meta property="og:updated_time" content="2017-03-08T10:33:00.000Z">
+<meta property="og:updated_time" content="2017-03-08T10:38:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AngularJS ngPlugin API">
 <meta name="twitter:description" content="用户系统／业务系统AngularJS组件库常用组件API.">
@@ -395,9 +395,9 @@
 <li>message: 提示信息</li>
 <li>reason: 提示信息补充说明</li>
 <li>type: fail|success</li>
-<li>delay: 显示时间，单位－秒 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">alert.alert(&#123;</div><div class="line"> <span class="attr">message</span>: <span class="string">'保存编辑失败，出现了错误哦！'</span>,</div><div class="line"> <span class="attr">reason</span>: <span class="string">'此提示3秒后关闭'</span>,</div><div class="line"> <span class="attr">type</span>: <span class="string">'fail'</span>,</div><div class="line"> <span class="attr">delay</span>: <span class="string">'3'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
+<li>delay: 显示时间，单位－秒 </li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">alert.alert(&#123;</div><div class="line"> <span class="attr">message</span>: <span class="string">'保存编辑失败，出现了错误哦！'</span>,</div><div class="line"> <span class="attr">reason</span>: <span class="string">'此提示3秒后关闭'</span>,</div><div class="line"> <span class="attr">type</span>: <span class="string">'fail'</span>,</div><div class="line"> <span class="attr">delay</span>: <span class="string">'3'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="confirm"><a href="#confirm" class="headerlink" title="confirm"></a>confirm</h3><ul>
 <li>title: 提示标题</li>
 <li>detailed: 提示详情信息</li>
@@ -405,9 +405,9 @@
 <li>yes: 确认按钮文案</li>
 <li>delay: 显示时间，单位－秒</li>
 <li>confirm: 点击确认后执行的操作</li>
-<li>cancel：点击取消按钮后执行的操作<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">alert.confirm(&#123;</div><div class="line">	<span class="attr">title</span> : <span class="string">'确认删除？'</span>,</div><div class="line">	<span class="attr">detailed</span> : <span class="string">'该操作是不可逆的，是否仍然继续？'</span>,</div><div class="line">	<span class="attr">no</span> : <span class="string">'取  消'</span>,</div><div class="line">	<span class="attr">yes</span> : <span class="string">'确认删除'</span>,</div><div class="line">	<span class="attr">delay</span> : <span class="string">'3'</span>,</div><div class="line">	<span class="attr">confirm</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</div><div class="line">	<span class="attr">cancel</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
+<li>cancel：点击取消按钮后执行的操作</li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">alert.confirm(&#123;</div><div class="line">	<span class="attr">title</span> : <span class="string">'确认删除？'</span>,</div><div class="line">	<span class="attr">detailed</span> : <span class="string">'该操作是不可逆的，是否仍然继续？'</span>,</div><div class="line">	<span class="attr">no</span> : <span class="string">'取  消'</span>,</div><div class="line">	<span class="attr">yes</span> : <span class="string">'确认删除'</span>,</div><div class="line">	<span class="attr">delay</span> : <span class="string">'3'</span>,</div><div class="line">	<span class="attr">confirm</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</div><div class="line">	<span class="attr">cancel</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h2 id="ngSubmit服务"><a href="#ngSubmit服务" class="headerlink" title="ngSubmit服务"></a>ngSubmit服务</h2><ul>
 <li>ele: 点击触发提交的元素</li>
 <li>data: 提交数据，此服务为post提交，默认数据格式－json</li>
