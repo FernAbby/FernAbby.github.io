@@ -1,0 +1,10 @@
+.posts-expand .post-eof {
+  margin: 20px auto;
+  width: 100%;
+}
+.post-button {
+  margin-top: 25px;
+}
+.posts-expand .post-meta {
+  margin: 3px 0;
+}

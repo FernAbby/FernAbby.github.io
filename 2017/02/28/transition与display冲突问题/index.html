@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS,JS," />
+  <meta name="keywords" content="JS,CSS3," />
 
 
 
@@ -89,16 +89,16 @@
 
 
 
-<meta name="description" content="元素使用&apos;display:none（block）&apos;实现隐藏（显示）时，动画效果无效问题的解决方法总结">
+<meta name="description" content="元素使用’display:none（block）’实现隐藏（显示）时，CSS3的transition动画效果无效。至于产生这种现象的深层次的机制原因不清楚，暂时理解为CSS3的transition过渡不支持display的改变，直接操作display会破坏transition的动画。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="transition与display冲突问题">
 <meta property="og:url" content="http://FernAbby.com/2017/02/28/transition与display冲突问题/index.html">
 <meta property="og:site_name" content="FernAbby's Notes">
-<meta property="og:description" content="元素使用&apos;display:none（block）&apos;实现隐藏（显示）时，动画效果无效问题的解决方法总结">
-<meta property="og:updated_time" content="2017-02-28T02:51:12.000Z">
+<meta property="og:description" content="元素使用’display:none（block）’实现隐藏（显示）时，CSS3的transition动画效果无效。至于产生这种现象的深层次的机制原因不清楚，暂时理解为CSS3的transition过渡不支持display的改变，直接操作display会破坏transition的动画。">
+<meta property="og:updated_time" content="2017-03-17T07:18:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="transition与display冲突问题">
-<meta name="twitter:description" content="元素使用&apos;display:none（block）&apos;实现隐藏（显示）时，动画效果无效问题的解决方法总结">
+<meta name="twitter:description" content="元素使用’display:none（block）’实现隐藏（显示）时，CSS3的transition动画效果无效。至于产生这种现象的深层次的机制原因不清楚，暂时理解为CSS3的transition过渡不支持display的改变，直接操作display会破坏transition的动画。">
 
 
 
@@ -374,10 +374,6 @@
           
 
           
-              <div class="post-description">
-                  元素使用'display:none（block）'实现隐藏（显示）时，动画效果无效问题的解决方法总结
-              </div>
-          
 
         </div>
       </header>
@@ -390,12 +386,14 @@
       
 
       
-        <h2 id="Html"><a href="#Html" class="headerlink" title="Html:"></a>Html:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"hideBtn"</span>&gt;</span>隐藏<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"showBtn"</span>&gt;</span>显示<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+        <p>元素使用’display:none（block）’实现隐藏（显示）时，CSS3的transition动画效果无效。至于产生这种现象的深层次的机制原因不清楚，暂时理解为CSS3的transition过渡不支持display的改变，直接操作display会破坏transition的动画。<br><a id="more"></a></p>
+<h2 id="Html"><a href="#Html" class="headerlink" title="Html:"></a>Html:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"hideBtn"</span>&gt;</span>隐藏<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"showBtn"</span>&gt;</span>显示<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS:"></a>CSS:</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span>&#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">        <span class="attribute">background-color</span>: green;</div><div class="line">        <span class="attribute">opacity</span>: <span class="number">0.1</span>;</div><div class="line">        <span class="attribute">transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">-webkit-transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">-moz-transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">-o-transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">-ms-transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">display</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span><span class="selector-class">.show</span>&#123;</div><div class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</div><div class="line">        <span class="attribute">transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">-webkit-transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">-moz-transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">-o-transition</span>: opacity <span class="number">1s</span>;</div><div class="line">        <span class="attribute">-ms-transition</span>: opacity <span class="number">1s</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h2><h3 id="1-visiblity代替display"><a href="#1-visiblity代替display" class="headerlink" title="1. visiblity代替display"></a>1. visiblity代替display</h3><h3 id="2-setTimeout"><a href="#2-setTimeout" class="headerlink" title="2. setTimeout"></a>2. setTimeout</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">showBtn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        container.show();</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                container.addClass(<span class="string">'show'</span>);</div><div class="line">        &#125;,delay);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>弊端：不同浏览器delay不同，如，chrome与IE10+可以为0，但是FF必须delay&gt;=14</p>
 <h3 id="3-window-requestAnimationFrame"><a href="#3-window-requestAnimationFrame" class="headerlink" title="3. window.requestAnimationFrame"></a>3. window.requestAnimationFrame</h3><p> 原理与setTimeout相同<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">showBtn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        container.show();</div><div class="line">        requestanimationframe(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                container.addClass(<span class="string">'show'</span>);</div><div class="line">        &#125;,delay);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="4-中间穿插代码，跳出当前处理tick机制（也不知怎么解释这个，暂时这么说吧）"><a href="#4-中间穿插代码，跳出当前处理tick机制（也不知怎么解释这个，暂时这么说吧）" class="headerlink" title="4. 中间穿插代码，跳出当前处理tick机制（也不知怎么解释这个，暂时这么说吧）"></a>4. 中间穿插代码，跳出当前处理tick机制（也不知怎么解释这个，暂时这么说吧）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">showBtn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        container.show();</div><div class="line">        container.css(<span class="string">"display"</span>);</div><div class="line">        container.addClass(<span class="string">'show'</span>);</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">showBtn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        container.show();</div><div class="line">        container[<span class="number">0</span>].clientLeft;</div><div class="line">        container.addClass(<span class="string">'show'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="4-中间穿插代码，跳出当前处理tick机制（也不知怎么解释这个，暂时这么说吧）"><a href="#4-中间穿插代码，跳出当前处理tick机制（也不知怎么解释这个，暂时这么说吧）" class="headerlink" title="4. 中间穿插代码，跳出当前处理tick机制（也不知怎么解释这个，暂时这么说吧）"></a>4. 中间穿插代码，跳出当前处理<a href="http://www.infoq.com/cn/articles/javascript-high-performance-animation-and-page-rendering?utm_source=infoq&amp;utm_medium=popular_links_homepage" target="_blank" rel="external">tick</a>机制（也不知怎么解释这个，暂时这么说吧）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">showBtn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        container.show();</div><div class="line">        container.css(<span class="string">"display"</span>);</div><div class="line">        container.addClass(<span class="string">'show'</span>);</div><div class="line">&#125;);</div><div class="line"> </div><div class="line">showBtn.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        container.show();</div><div class="line">        container[<span class="number">0</span>].clientLeft;</div><div class="line">        container.addClass(<span class="string">'show'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>个人理解：display的操作会触发浏览器的reflow操作，而transition支持的效果只是触发浏览器的repaint操作，回到上面的demo，如果我们通过visibility属性来控制显示与隐藏，则不会破坏transition的效果。所以，可以暂时这么认为：reflow与repaint的混合会破坏transition的动画效果，</p>
 
       
     </div>
@@ -440,9 +438,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
-          
             <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
           
         </div>
       
@@ -561,7 +559,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
