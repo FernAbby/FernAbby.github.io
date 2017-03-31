@@ -89,16 +89,16 @@
 
 
 
-<meta name="description" content="分享技术笔记">
+<meta name="description" content="NodeJS中模块文件采用闭包原理，每个模块文件有自己的作用域，变量和方法私有化。所以在require时需要获取一个接口，而Module.exports就是一个对外公开内部函数和变量的接口，exports作为他的辅助工具，exports收集到的属性和方法，都赋值给Module.exports，再返回给调用。前提却是，Module.exports本身不具备任何属性和方法。如果，Module.expo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js的exports属性">
 <meta property="og:url" content="http://FernAbby.com/2017/03/25/Node-js的exports属性/index.html">
 <meta property="og:site_name" content="FernAbby's Notes">
-<meta property="og:description" content="分享技术笔记">
-<meta property="og:updated_time" content="2017-03-25T09:02:23.000Z">
+<meta property="og:description" content="NodeJS中模块文件采用闭包原理，每个模块文件有自己的作用域，变量和方法私有化。所以在require时需要获取一个接口，而Module.exports就是一个对外公开内部函数和变量的接口，exports作为他的辅助工具，exports收集到的属性和方法，都赋值给Module.exports，再返回给调用。前提却是，Module.exports本身不具备任何属性和方法。如果，Module.expo">
+<meta property="og:updated_time" content="2017-03-30T11:55:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js的exports属性">
-<meta name="twitter:description" content="分享技术笔记">
+<meta name="twitter:description" content="NodeJS中模块文件采用闭包原理，每个模块文件有自己的作用域，变量和方法私有化。所以在require时需要获取一个接口，而Module.exports就是一个对外公开内部函数和变量的接口，exports作为他的辅助工具，exports收集到的属性和方法，都赋值给Module.exports，再返回给调用。前提却是，Module.exports本身不具备任何属性和方法。如果，Module.expo">
 
 
 
@@ -386,7 +386,31 @@
       
 
       
-        
+        <p>NodeJS中模块文件采用闭包原理，每个模块文件有自己的作用域，变量和方法私有化。所以在require时需要获取一个接口，而Module.exports就是一个对外公开内部函数和变量的接口，exports作为他的辅助工具，exports收集到的属性和方法，都赋值给Module.exports，再返回给调用。前提却是，Module.exports本身不具备任何属性和方法。如果，Module.exports已经具备一些属性和方法，那么exports收集来的信息将被忽略。<br>注：nodeJS的require为阻塞加载，但一般第一次访问后，都会有缓存文件，所以第二次访问就不存在这个问题了。<br><a id="more"></a></p>
+<ol>
+<li>exports是module.exports的一个引用</li>
+<li>require引用模块后，返回给调用者的是module.exports而不是exports</li>
+<li>exports.xxx，相当于在导出对象上挂属性，该属性对调用模块直接可见</li>
+<li>exports = 相当于给exports对象重新赋值，调用模块不能访问exports对象及其属性</li>
+<li>如果此模块是一个类，就应该直接赋值module.exports，这样调用者就是一个类构造器，可以直接new实例</li>
+</ol>
+<p>exports和module.exports属于Object类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var module = &#123;</div><div class="line">    exports:&#123;</div><div class="line">        name:&quot;我是module的exports属性&quot;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">var exports = module.exports;  //exports是对module.exports的引用，也就是exports现在指向的内存地址和module.exports指向的内存地址是一样的</div><div class="line">console.log(module.exports);    //  &#123; name: &apos;我是module的exports属性&apos; &#125;</div><div class="line">console.log(exports);   //  &#123; name: &apos;我是module的exports属性&apos; &#125;</div><div class="line">exports.name = &quot;我想改一下名字&quot;;</div><div class="line">console.log(module.exports);    //  &#123; name: &apos;我想改一下名字&apos; &#125;</div><div class="line">console.log(exports);   //  &#123; name: &apos;我想改一下名字&apos; &#125;</div><div class="line">//引用的结果就是a和b都操作同一内存地址下的数据</div><div class="line">//这个时候在某个文件定义了一个想导出的模块</div><div class="line">var Circle = &#123;</div><div class="line">    name:&quot;我是一个圆&quot;,</div><div class="line">    func:function(x)&#123;</div><div class="line">        return x*x*3.14;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">exports = Circle;//看清楚了，Circle这个Object在内存中指向了新的地址，所以exports也指向了这个新的地址，和原来的地址没有关系了</div><div class="line">console.log(module.exports);    //  &#123; name: &apos;我想改一下名字&apos; &#125;</div><div class="line">console.log(exports);   // &#123; name: &apos;我是一个圆&apos;, func: [Function] &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="exports-xxx相当于在返回的实例对象上挂属性和方法"><a href="#exports-xxx相当于在返回的实例对象上挂属性和方法" class="headerlink" title="exports.xxx相当于在返回的实例对象上挂属性和方法"></a>exports.xxx相当于在返回的实例对象上挂属性和方法</h2><p>A.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">exports.str = &apos;a&apos;;</div><div class="line">exports.fn = function() &#123;</div><div class="line">	console.log(&apos;this is exports function!&apos;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>B.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = require(&apos;./A.js&apos;);</div><div class="line">console.log(a.str); // a</div><div class="line">a.fn(); // this is exports function!</div></pre></td></tr></table></figure></p>
+<h2 id="exports-相当于给exports对象重新赋值，指向新地址"><a href="#exports-相当于给exports对象重新赋值，指向新地址" class="headerlink" title="exports = 相当于给exports对象重新赋值，指向新地址"></a>exports = 相当于给exports对象重新赋值，指向新地址</h2><p>A.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">exports.str = &apos;a&apos;;</div><div class="line">exports = function fn() &#123;&#125;;</div></pre></td></tr></table></figure></p>
+<p>B.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var a = require(&apos;./A.js&apos;);</div><div class="line">console.log(a.str); // a</div><div class="line">a.fn(); // TypeError: Object a has no method &apos;fn&apos;</div></pre></td></tr></table></figure></p>
+<p>require得到的是一个{str: ‘a’}对象。<br>A.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">exports.str = &apos;a&apos;;</div><div class="line">Module.exports = function fn() &#123;</div><div class="line">	console.log(&apos;this is Module.exports function!&apos;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>B.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var A = require(&apos;./A.js&apos;);</div><div class="line">console.log(A.str); // TypeError: Object A has no property &apos;str&apos;</div><div class="line">var a = new A();</div></pre></td></tr></table></figure></p>
+<p>＝＝＝＝＝＝＝＝＝＝＝<br>A.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">exports.str = &apos;a&apos;;</div><div class="line">Module.exports = ‘b’;</div></pre></td></tr></table></figure></p>
+<p>B.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var A = require(&apos;./A.js&apos;);</div><div class="line">console.log(A.str); // TypeError: Object b has no property &apos;str&apos;</div></pre></td></tr></table></figure></p>
+<p>由此可知，模块并不一定非得返回“实例化对象”。<br>模块返回值可以是任何合法的JavaScript对象–boolean, number, date, JSON, string, function, array等等。</p>
+<h2 id="Module-exports"><a href="#Module-exports" class="headerlink" title="Module.exports ="></a>Module.exports =</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">export = function()&#123;</div><div class="line">console.log(&apos;X&apos;);</div><div class="line">&#125;</div><div class="line">//上面export指向新的内存地址，无法导出，下面写法可以导出</div><div class="line">Module.export = function()&#123;</div><div class="line">console.log(&apos;X&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>总结下，有两点：</p>
+<ol>
+<li>如果你想的模块是一个典型的“实例化对象”就用exports。对于要导出的属性，可以简单直接挂到exports对象上</li>
+<li>如果你想你的模块是一个特定的类型就用Module.exports。对于类，为了直接使导出的内容作为类的构造器可以让调用者使用new操作符创建实例对象，应该把构造函数挂到module.exports对象上，不要和导出属性值混在一起</li>
+</ol>
+
       
     </div>
 
@@ -502,8 +526,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars1.githubusercontent.com/u/13566690?v=3&s=460"
@@ -602,6 +635,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#exports-xxx相当于在返回的实例对象上挂属性和方法"><span class="nav-number">1.</span> <span class="nav-text">exports.xxx相当于在返回的实例对象上挂属性和方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exports-相当于给exports对象重新赋值，指向新地址"><span class="nav-number">2.</span> <span class="nav-text">exports = 相当于给exports对象重新赋值，指向新地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Module-exports"><span class="nav-number">3.</span> <span class="nav-text">Module.exports =</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
