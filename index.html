@@ -391,7 +391,7 @@
 
       
         
-          <p>NodeJS中模块文件采用闭包原理，每个模块文件有自己的作用域，变量和方法私有化。所以在require时需要获取一个接口，而Module.exports就是一个对外公开内部函数和变量的接口，exports作为他的辅助工具，exports收集到的属性和方法，都赋值给Module.exports，再返回给调用。前提却是，Module.exports本身不具备任何属性和方法。如果，Module.exports已经具备一些属性和方法，那么exports收集来的信息将被忽略。<br>注：nodeJS的require为阻塞加载，但一般第一次访问后，都会有缓存文件，所以第二次访问就不存在这个问题了。<br>
+          <p>NodeJS中模块文件采用闭包原理，每个模块文件有自己的作用域，变量和方法私有化。所以在require时需要获取一个接口，而Module.exports就是一个对外公开内部函数和变量的接口，exports作为他的辅助工具，exports收集到的属性和方法，都赋值给Module.exports，再返回给调用。前提却是，Module.exports本身不具备任何属性和方法。如果，Module.exports已经具备一些属性和方法，那么exports收集来的信息将被忽略。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/25/Node-js的exports属性/#more" rel="contents">
