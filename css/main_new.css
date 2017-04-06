@@ -8,3 +8,11 @@
 .posts-expand .post-meta {
   margin: 3px 0;
 }
+img.img-topic {
+  display: block;
+  margin-left: 0.7em;
+  margin-right: 0.7em;
+  padding: 0;
+  float: right;
+  clear: right;
+}
