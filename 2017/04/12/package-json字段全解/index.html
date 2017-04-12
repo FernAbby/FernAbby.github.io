@@ -93,7 +93,11 @@
 
 不要在name中包含js, node字样；
 这个名字最终会是URL的一部分，命令行的参数，目录名，所以不能以点号或下划线开头；
-这个名字可能在require()方法中被调用，所以应该尽可能短；Version版本号,必须字段。Description项目描述，可选字段，必须是字符串。npm search的时候会用到。Keywords可选字段，字符串数组。npm">
+这个名字可能在require()方法中被调用，所以应该尽可能短；
+
+Version版本号,必须字段。
+Description项目描述，可选字段，必须是字符串。npm search的时候会用到。
+Keywords可选字段，字符串数组。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="package.json字段全解">
 <meta property="og:url" content="http://FernAbby.com/2017/04/12/package-json字段全解/index.html">
@@ -102,15 +106,23 @@
 
 不要在name中包含js, node字样；
 这个名字最终会是URL的一部分，命令行的参数，目录名，所以不能以点号或下划线开头；
-这个名字可能在require()方法中被调用，所以应该尽可能短；Version版本号,必须字段。Description项目描述，可选字段，必须是字符串。npm search的时候会用到。Keywords可选字段，字符串数组。npm">
-<meta property="og:updated_time" content="2017-04-12T06:10:34.000Z">
+这个名字可能在require()方法中被调用，所以应该尽可能短；
+
+Version版本号,必须字段。
+Description项目描述，可选字段，必须是字符串。npm search的时候会用到。
+Keywords可选字段，字符串数组。">
+<meta property="og:updated_time" content="2017-04-12T06:17:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="package.json字段全解">
 <meta name="twitter:description" content="Name项目名字，必须字段。小提示：
 
 不要在name中包含js, node字样；
 这个名字最终会是URL的一部分，命令行的参数，目录名，所以不能以点号或下划线开头；
-这个名字可能在require()方法中被调用，所以应该尽可能短；Version版本号,必须字段。Description项目描述，可选字段，必须是字符串。npm search的时候会用到。Keywords可选字段，字符串数组。npm">
+这个名字可能在require()方法中被调用，所以应该尽可能短；
+
+Version版本号,必须字段。
+Description项目描述，可选字段，必须是字符串。npm search的时候会用到。
+Keywords可选字段，字符串数组。">
 
 
 
@@ -403,33 +415,29 @@
 <ul>
 <li>不要在name中包含js, node字样；</li>
 <li>这个名字最终会是URL的一部分，命令行的参数，目录名，所以不能以点号或下划线开头；</li>
-<li>这个名字可能在require()方法中被调用，所以应该尽可能短；<h2 id="Version"><a href="#Version" class="headerlink" title="Version"></a>Version</h2>版本号,必须字段。<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2>项目描述，可选字段，必须是字符串。npm search的时候会用到。<h2 id="Keywords"><a href="#Keywords" class="headerlink" title="Keywords"></a>Keywords</h2>可选字段，字符串数组。npm search的时候会用到。<h2 id="Homepage"><a href="#Homepage" class="headerlink" title="Homepage"></a>Homepage</h2>可选字段，没有<a href="http://等带协议前缀的URL。" target="_blank" rel="external">http://等带协议前缀的URL。</a><h2 id="Bugs"><a href="#Bugs" class="headerlink" title="Bugs"></a>Bugs</h2>可选字段，问题追踪系统的URL或邮箱地址；npm bugs用的上。</li>
+<li>这个名字可能在require()方法中被调用，所以应该尽可能短；</li>
 </ul>
-<p>{ “url” :”<a href="http://github.com/owner/project/issues" target="_blank" rel="external">http://github.com/owner/project/issues</a>“,</p>
-<p> “email” :”project@hostname.com”</p>
-<p>}</p>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>可选字段。</p>
-<p>如果是使用一个普遍的license，比如BSD-3-Clause或MIT，直接使用：</p>
-<p>{ “license” : “BSD-3-Clause” }<br>Author, contributors<br>都是可选字段。author是一个人，contributors是一组人。</p>
-<h2 id="Author的格式如下："><a href="#Author的格式如下：" class="headerlink" title="Author的格式如下："></a>Author的格式如下：</h2><p>{ “name” : “Barney Rubble”,<br> “email” : “b@rubble.com”,<br> “url” : “<a href="http://barnyrubble.tumblr.com/" target="_blank" rel="external">http://barnyrubble.tumblr.com/</a>“<br>}<br>这种格式也可以：</p>
-<p>“Barney Rubble <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#x62;&#x40;&#x72;&#117;&#98;&#98;&#x6c;&#x65;&#46;&#99;&#111;&#109;">&#x62;&#x40;&#x72;&#117;&#98;&#98;&#x6c;&#x65;&#46;&#99;&#111;&#109;</a> (<a href="http://barnyrubble.tumblr.com/" target="_blank" rel="external">http://barnyrubble.tumblr.com/</a>)”</p>
+<h2 id="Version"><a href="#Version" class="headerlink" title="Version"></a>Version</h2><p>版本号,必须字段。</p>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>项目描述，可选字段，必须是字符串。npm search的时候会用到。</p>
+<h2 id="Keywords"><a href="#Keywords" class="headerlink" title="Keywords"></a>Keywords</h2><p>可选字段，字符串数组。npm search的时候会用到。</p>
+<h2 id="Homepage"><a href="#Homepage" class="headerlink" title="Homepage"></a>Homepage</h2><p>可选字段，没有<a href="http://等带协议前缀的URL。" target="_blank" rel="external">http://等带协议前缀的URL。</a></p>
+<h2 id="Bugs"><a href="#Bugs" class="headerlink" title="Bugs"></a>Bugs</h2><p>可选字段，问题追踪系统的URL或邮箱地址；npm bugs用的上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;url&quot; :&quot;http://github.com/owner/project/issues&quot;,</div><div class="line">  &quot;email&quot; :&quot;project@hostname.com&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>可选字段。<br>如果是使用一个普遍的license，比如BSD-3-Clause或MIT，直接使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;license&quot; : &quot;BSD-3-Clause&quot; &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Author-contributors"><a href="#Author-contributors" class="headerlink" title="Author, contributors"></a>Author, contributors</h2><p>都是可选字段。author是一个人，contributors是一组人。</p>
+<h2 id="Author的格式如下："><a href="#Author的格式如下：" class="headerlink" title="Author的格式如下："></a>Author的格式如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;name&quot; : &quot;Barney Rubble&quot;,</div><div class="line"> &quot;email&quot; : &quot;b@rubble.com&quot;,</div><div class="line"> &quot;url&quot; : &quot;http://barnyrubble.tumblr.com/&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这种格式也可以：<br>“Barney Rubble <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#58;&#x62;&#64;&#x72;&#x75;&#98;&#x62;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">&#x62;&#64;&#x72;&#x75;&#98;&#x62;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a> (<a href="http://barnyrubble.tumblr.com/" target="_blank" rel="external">http://barnyrubble.tumblr.com/</a>)”</p>
 <h2 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h2><p>可选字段，项目包含的一组文件。如果是文件夹，文件夹下的文件也会被包含。如果需要把某些文件不包含在项目中，添加一个”.npmignore”文件。这个文件和”gitignore”类似。</p>
 <h2 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h2><p>可选字段。这个字段的值是你程序主入口模块的ID。如果其他用户需要你的包，当用户调用require()方法时，返回的就是这个模块的导出（exports）。</p>
-<h2 id="Bin"><a href="#Bin" class="headerlink" title="Bin"></a>Bin</h2><p>可选字段。很多的包都会有执行文件需要安装到PATH中去。</p>
-<p>这个字段对应的是一个Map，每个元素对应一个{ 命令名：文件名 }。</p>
-<p>{ “bin” : { “npm” : “./cli.js” } }</p>
-<h2 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h2><p>用于指示包的目录结构：</p>
-<p>Directories.lib<br>指示库文件的位置。</p>
-<p>Directories.bin<br>和前面的bin是一样的，但如果前面已经有bin，那么这个就无效。</p>
-<p>除了以上两个，还有Directories.doc&amp; Directories.man &amp; Directories.example。</p>
-<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>可选字段。用于指示代码存放的位置。</p>
-<p>“repository” :<br>  { “type” : “git”<br>  , “url” : “<a href="http://github.com/npm/npm.git" target="_blank" rel="external">http://github.com/npm/npm.git</a>“<br>  }</p>
-<p>“repository” :<br>  { “type” : “svn”<br>  , “url” : “<a href="http://v8.googlecode.com/svn/trunk/" target="_blank" rel="external">http://v8.googlecode.com/svn/trunk/</a>“<br>  }</p>
+<h2 id="Bin"><a href="#Bin" class="headerlink" title="Bin"></a>Bin</h2><p>可选字段。很多的包都会有执行文件需要安装到PATH中去。<br>这个字段对应的是一个Map，每个元素对应一个{ 命令名：文件名 }。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;bin&quot; : &#123; &quot;npm&quot; : &quot;./cli.js&quot; &#125; &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h2><p>用于指示包的目录结构：<br>Directories.lib<br>指示库文件的位置。</p>
+<p>Directories.bin<br>和前面的bin是一样的，但如果前面已经有bin，那么这个就无效。<br>除了以上两个，还有Directories.doc&amp; Directories.man &amp; Directories.example。</p>
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h2><p>可选字段。用于指示代码存放的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;repository&quot; :</div><div class="line">  &#123; &quot;type&quot; : &quot;git&quot;</div><div class="line">  , &quot;url&quot; : &quot;http://github.com/npm/npm.git&quot;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;repository&quot; :</div><div class="line">  &#123; &quot;type&quot; : &quot;svn&quot;</div><div class="line">  , &quot;url&quot; : &quot;http://v8.googlecode.com/svn/trunk/&quot;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <h2 id="Scripts"><a href="#Scripts" class="headerlink" title="Scripts"></a>Scripts</h2><p>可选字段，object。Key是生命周期事件名，value是在事件点要跑的命令。参考npm-scripts。</p>
 <h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><p>可选字段，object。</p>
 <p>Config对象中的值在Scripts的整个周期中皆可用，专门用于给Scripts提供配置参数。</p>
-<h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><p>可选字段，指示当前包所依赖的其他包。</p>
-<p>{ “dependencies” :<br>  { “foo” : “1.0.0 - 2.9999.9999”<br>  , “bar” : “&gt;=1.0.2 <2.1.2" ,="" "baz"="" :="" "="">1.0.2 &lt;=2.3.4”<br>  , “boo” : “2.0.1”<br>  , “qux” : “<1.0.0 ||="">=2.3.1 <2.4.5 ||="">=2.5.2 &lt;3.0.0”<br>  , “asd” : “<a href="http://asdf.com/asdf.tar.gz" target="_blank" rel="external">http://asdf.com/asdf.tar.gz</a>“<br>  , “til” : “~1.2”<br>  , “elf” : “~1.2.3”<br>  , “two” : “2.x”<br>  , “thr” : “3.3.x”<br>  }<br>}<br>版本格式可以是下面任一种：</2.4.5></1.0.0></2.1.2"></p>
+<h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><p>可选字段，指示当前包所依赖的其他包。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;dependencies&quot; :</div><div class="line">  &#123; &quot;foo&quot; : &quot;1.0.0 - 2.9999.9999&quot;</div><div class="line">  , &quot;bar&quot; : &quot;&gt;=1.0.2 &lt;2.1.2&quot;</div><div class="line">  , &quot;baz&quot; : &quot;&gt;1.0.2 &lt;=2.3.4&quot;</div><div class="line">  , &quot;boo&quot; : &quot;2.0.1&quot;</div><div class="line">  , &quot;qux&quot; : &quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;</div><div class="line">  , &quot;asd&quot; : &quot;http://asdf.com/asdf.tar.gz&quot;</div><div class="line">  , &quot;til&quot; : &quot;~1.2&quot;</div><div class="line">  , &quot;elf&quot; : &quot;~1.2.3&quot;</div><div class="line">  , &quot;two&quot; : &quot;2.x&quot;</div><div class="line">  , &quot;thr&quot; : &quot;3.3.x&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>版本格式可以是下面任一种：</p>
 <ul>
 <li>version 完全匹配</li>
 <li><blockquote>
@@ -454,22 +462,17 @@
 <li>version1 - version2  等价于 &gt;=version1 &lt;=version2.</li>
 <li>range1 || range2 满足任意一个即可</li>
 <li>git… Git地址</li>
-<li>user/repo<h2 id="devDependencies"><a href="#devDependencies" class="headerlink" title="devDependencies"></a>devDependencies</h2>可选字段。如果只需要下载使用某些模块，而不下载这些模块的测试和文档框架，放在这个下面比较不错。</li>
+<li>user/repo</li>
 </ul>
+<h2 id="devDependencies"><a href="#devDependencies" class="headerlink" title="devDependencies"></a>devDependencies</h2><p>可选字段。如果只需要下载使用某些模块，而不下载这些模块的测试和文档框架，放在这个下面比较不错。</p>
 <h2 id="peerDependencies"><a href="#peerDependencies" class="headerlink" title="peerDependencies"></a>peerDependencies</h2><p>可选字段。兼容性依赖。如果你的包是插件，适合这种方式。</p>
 <h2 id="bundledDependencies"><a href="#bundledDependencies" class="headerlink" title="bundledDependencies"></a>bundledDependencies</h2><p>可选字段。发布包时同时打包的其他依赖。</p>
 <h2 id="optionalDependencies"><a href="#optionalDependencies" class="headerlink" title="optionalDependencies"></a>optionalDependencies</h2><p>可选字段。如果你想在某些依赖即使没有找到，或则安装失败的情况下，npm都继续执行。那么这些依赖适合放在这里。</p>
-<h2 id="Engines"><a href="#Engines" class="headerlink" title="Engines"></a>Engines</h2><p>可选字段。既可以指定node版本：</p>
-<p>{ “engines” : {“node” : “&gt;=0.10.3 &lt;0.12” } }</p>
-<p>也可以指定npm版本：</p>
-<p>{ “engines” : {“npm” : “~1.0.20” } }</p>
+<h2 id="Engines"><a href="#Engines" class="headerlink" title="Engines"></a>Engines</h2><p>可选字段。既可以指定node版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;engines&quot; : &#123;&quot;node&quot; : &quot;&gt;=0.10.3 &lt;0.12&quot; &#125; &#125;</div></pre></td></tr></table></figure></p>
+<p>也可以指定npm版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123; &quot;engines&quot; : &#123;&quot;npm&quot; : &quot;~1.0.20&quot; &#125; &#125;</div></pre></td></tr></table></figure></p>
 <h2 id="engineStrick"><a href="#engineStrick" class="headerlink" title="engineStrick"></a>engineStrick</h2><p>可选字段，布尔值。如果你肯定你的程序只能在制定的engine上运行，设置为true。</p>
-<h2 id="Os"><a href="#Os" class="headerlink" title="Os"></a>Os</h2><p>可选字段。指定模块可以在什么操作系统上运行：</p>
-<p>“os” : [ “darwin”,”linux” ]</p>
-<p>“os” : [ “!win32” ]</p>
-<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><p>可选字段。指定CPU型号。</p>
-<p>“cpu” : [ “x64”,”ia32” ]</p>
-<p>“cpu” : [ “!arm”,”!mips” ]</p>
+<h2 id="Os"><a href="#Os" class="headerlink" title="Os"></a>Os</h2><p>可选字段。指定模块可以在什么操作系统上运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&quot;os&quot; : [ &quot;darwin&quot;,&quot;linux&quot; ]</div><div class="line">&quot;os&quot; : [ &quot;!win32&quot; ]</div></pre></td></tr></table></figure></p>
+<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><p>可选字段。指定CPU型号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&quot;cpu&quot; : [ &quot;x64&quot;,&quot;ia32&quot; ]</div><div class="line">&quot;cpu&quot; : [ &quot;!arm&quot;,&quot;!mips&quot; ]</div></pre></td></tr></table></figure></p>
 <h2 id="preferGlobal"><a href="#preferGlobal" class="headerlink" title="preferGlobal"></a>preferGlobal</h2><p>可选字段，布尔值。如果你的包是个命令行应用程序，需要全局安装，就可以设为true。</p>
 <h2 id="Private"><a href="#Private" class="headerlink" title="Private"></a>Private</h2><p>可选字段，布尔值。如果private为true，npm会拒绝发布。这可以防止私有repositories不小心被发布出去。</p>
 <h2 id="publishConfig"><a href="#publishConfig" class="headerlink" title="publishConfig"></a>publishConfig</h2><p>可选字段。发布时使用的配置值放这。</p>
@@ -716,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Name"><span class="nav-number">1.</span> <span class="nav-text">Name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Version"><span class="nav-number">2.</span> <span class="nav-text">Version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">3.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keywords"><span class="nav-number">4.</span> <span class="nav-text">Keywords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Homepage"><span class="nav-number">5.</span> <span class="nav-text">Homepage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bugs"><span class="nav-number">6.</span> <span class="nav-text">Bugs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">7.</span> <span class="nav-text">License</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Author的格式如下："><span class="nav-number">8.</span> <span class="nav-text">Author的格式如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Files"><span class="nav-number">9.</span> <span class="nav-text">Files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Main"><span class="nav-number">10.</span> <span class="nav-text">Main</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bin"><span class="nav-number">11.</span> <span class="nav-text">Bin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directories"><span class="nav-number">12.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Repository"><span class="nav-number">13.</span> <span class="nav-text">Repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scripts"><span class="nav-number">14.</span> <span class="nav-text">Scripts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Config"><span class="nav-number">15.</span> <span class="nav-text">Config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependencies"><span class="nav-number">16.</span> <span class="nav-text">Dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#devDependencies"><span class="nav-number">17.</span> <span class="nav-text">devDependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peerDependencies"><span class="nav-number">18.</span> <span class="nav-text">peerDependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bundledDependencies"><span class="nav-number">19.</span> <span class="nav-text">bundledDependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optionalDependencies"><span class="nav-number">20.</span> <span class="nav-text">optionalDependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Engines"><span class="nav-number">21.</span> <span class="nav-text">Engines</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#engineStrick"><span class="nav-number">22.</span> <span class="nav-text">engineStrick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Os"><span class="nav-number">23.</span> <span class="nav-text">Os</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU"><span class="nav-number">24.</span> <span class="nav-text">CPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#preferGlobal"><span class="nav-number">25.</span> <span class="nav-text">preferGlobal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Private"><span class="nav-number">26.</span> <span class="nav-text">Private</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#publishConfig"><span class="nav-number">27.</span> <span class="nav-text">publishConfig</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认值"><span class="nav-number">28.</span> <span class="nav-text">默认值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Name"><span class="nav-number">1.</span> <span class="nav-text">Name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Version"><span class="nav-number">2.</span> <span class="nav-text">Version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">3.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keywords"><span class="nav-number">4.</span> <span class="nav-text">Keywords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Homepage"><span class="nav-number">5.</span> <span class="nav-text">Homepage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bugs"><span class="nav-number">6.</span> <span class="nav-text">Bugs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">7.</span> <span class="nav-text">License</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Author-contributors"><span class="nav-number">8.</span> <span class="nav-text">Author, contributors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Author的格式如下："><span class="nav-number">9.</span> <span class="nav-text">Author的格式如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Files"><span class="nav-number">10.</span> <span class="nav-text">Files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Main"><span class="nav-number">11.</span> <span class="nav-text">Main</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bin"><span class="nav-number">12.</span> <span class="nav-text">Bin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directories"><span class="nav-number">13.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Repository"><span class="nav-number">14.</span> <span class="nav-text">Repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scripts"><span class="nav-number">15.</span> <span class="nav-text">Scripts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Config"><span class="nav-number">16.</span> <span class="nav-text">Config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependencies"><span class="nav-number">17.</span> <span class="nav-text">Dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#devDependencies"><span class="nav-number">18.</span> <span class="nav-text">devDependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#peerDependencies"><span class="nav-number">19.</span> <span class="nav-text">peerDependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bundledDependencies"><span class="nav-number">20.</span> <span class="nav-text">bundledDependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optionalDependencies"><span class="nav-number">21.</span> <span class="nav-text">optionalDependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Engines"><span class="nav-number">22.</span> <span class="nav-text">Engines</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#engineStrick"><span class="nav-number">23.</span> <span class="nav-text">engineStrick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Os"><span class="nav-number">24.</span> <span class="nav-text">Os</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU"><span class="nav-number">25.</span> <span class="nav-text">CPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#preferGlobal"><span class="nav-number">26.</span> <span class="nav-text">preferGlobal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Private"><span class="nav-number">27.</span> <span class="nav-text">Private</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#publishConfig"><span class="nav-number">28.</span> <span class="nav-text">publishConfig</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认值"><span class="nav-number">29.</span> <span class="nav-text">默认值</span></a></li></ol></div>
             
 
           </div>
