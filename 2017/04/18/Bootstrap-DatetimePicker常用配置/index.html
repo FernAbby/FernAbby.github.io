@@ -89,21 +89,18 @@
 
 
 
-<meta name="description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档
-选项所有需要”Date” 的选项都可以处理Date 对象;你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：">
+<meta name="description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bootstrap DatetimePicker常用配置">
 <meta property="og:url" content="http://FernAbby.com/2017/04/18/Bootstrap-DatetimePicker常用配置/index.html">
 <meta property="og:site_name" content="FernAbby's Notes">
-<meta property="og:description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档
-选项所有需要”Date” 的选项都可以处理Date 对象;你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：">
+<meta property="og:description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档">
 <meta property="og:image" content="http://FernAbby.com/images/myImages/views0.png">
 <meta property="og:image" content="http://FernAbby.com/images/myImages/views1.png">
-<meta property="og:updated_time" content="2017-04-19T09:10:57.000Z">
+<meta property="og:updated_time" content="2017-04-19T09:12:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bootstrap DatetimePicker常用配置">
-<meta name="twitter:description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档
-选项所有需要”Date” 的选项都可以处理Date 对象;你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：">
+<meta name="twitter:description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档">
 <meta name="twitter:image" content="http://FernAbby.com/images/myImages/views0.png">
 
 
@@ -393,8 +390,8 @@
       
 
       
-        <p>整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。<br><a href="https://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank" rel="external">参看demo实例</a><br><a href="http://www.bootcss.com/p/bootstrap-datetimepicker/" target="_blank" rel="external">API官方文档</a></p>
-<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><p>所有需要”Date” 的选项都可以处理Date 对象;<br>你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：<br><a id="more"></a><br>yyyy-mm-dd<br>yyyy-mm-dd hh:ii<br>yyyy-mm-ddThh:ii<br>yyyy-mm-dd hh:ii:ss<br>yyyy-mm-ddThh:ii:ssZ<br>常用配置：<br>到天=&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(&apos;.dateTimePicker&apos;).datetimepicker(&#123;</div><div class="line">            format: &apos;yyyy-mm-dd&apos;,</div><div class="line">            language: &apos;zh-CN&apos;,</div><div class="line">            maxView: 3,</div><div class="line">            minView: 2,</div><div class="line">            minuteStep: 5,</div><div class="line">            startView: 2,</div><div class="line">            autoclose: true</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+        <p>整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。<br><a href="https://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank" rel="external">参看demo实例</a><br><a href="http://www.bootcss.com/p/bootstrap-datetimepicker/" target="_blank" rel="external">API官方文档</a><br><a id="more"></a></p>
+<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><p>所有需要”Date” 的选项都可以处理Date 对象;<br>你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：<br>yyyy-mm-dd<br>yyyy-mm-dd hh:ii<br>yyyy-mm-ddThh:ii<br>yyyy-mm-dd hh:ii:ss<br>yyyy-mm-ddThh:ii:ssZ<br>常用配置：<br>到天=&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(&apos;.dateTimePicker&apos;).datetimepicker(&#123;</div><div class="line">            format: &apos;yyyy-mm-dd&apos;,</div><div class="line">            language: &apos;zh-CN&apos;,</div><div class="line">            maxView: 3,</div><div class="line">            minView: 2,</div><div class="line">            minuteStep: 5,</div><div class="line">            startView: 2,</div><div class="line">            autoclose: true</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
 <p>到分钟=&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(&apos;.dateTimePicker&apos;).datetimepicker(&#123;</div><div class="line">            format: &apos;yyyy-mm-dd hh:ii&apos;,</div><div class="line">            language: &apos;zh-CN&apos;,</div><div class="line">            maxView: 3,</div><div class="line">            minView: 0,</div><div class="line">            minuteStep: 1,</div><div class="line">            startView: 2,</div><div class="line">            autoclose: true</div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
 <p>到秒=&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(&apos;.dateTimePicker&apos;).datetimepicker(&#123;</div><div class="line">           format: &apos;yyyy-mm-dd hh:ii:ss&apos;,//yyyy-mm-dd hh:ii:00</div><div class="line">           language: &apos;zh-CN&apos;,</div><div class="line">           maxView: 3,</div><div class="line">           minView: 0,</div><div class="line">           minuteStep: 5,</div><div class="line">           startView: 2,</div><div class="line">           autoclose: true,</div><div class="line">           todayBtn:&apos;linked&apos;</div><div class="line">       &#125;);</div></pre></td></tr></table></figure></p>
 <h3 id="format"><a href="#format" class="headerlink" title="format"></a>format</h3><p>String. 默认值: ‘mm/dd/yyyy’<br>日期格式， p, P, h, hh, i, ii, s, ss, d, dd, m, mm, M, MM, yy, yyyy 的任意组合。<br>p : 上午(0:00-12-00)或者下午(12:00-24:00)的小写’am’或者’pm’<br>P : 上午(0:00-12-00)或者下午(12:00-24:00)的小写’AM’或者’PM’<br>s : 秒，没有前导零的秒数<br>ss : 秒，带前导零2位数<br>i : 分钟，没有前导零的分钟<br>ii : 分钟，带前导零2位数<br>h : 小时，没有前导零的小时 - 24小时制<br>hh : 小时，带前导零2位数 - 24小时制<br>H : 小时，没有前导零的小时 - 12小时制<br>HH : 小时，带前导零2位数- 12小时制<br>d : 天，没有前导零的天<br>dd : 天，带前导零2位数<br>m : 月，没有前导零的月<br>mm : 月，带前导零2位数<br>M : 英文字母的简写，三个字母Jan,Feb…<br>MM : 英文字母的全拼，如：January， March<br>yy : 年，后面两位 如：17<br>yyyy : 年，4位，如：2017</p>
