@@ -1,0 +1,979 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Bootstrap,dateTimePicker," />
+
+
+
+
+
+  <link rel="alternate" href="https://fernabby.github.io/atom.xml" title="FernAbby's Notes" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档
+选项所有需要”Date” 的选项都可以处理Date 对象;你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：yyyy-mm-ddyyyy-mm-dd hh:iiyyyy-mm-ddThh:iiyyyy-mm-dd hh:ii:ssyyyy-mm-ddTh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap DatetimePicker常用配置">
+<meta property="og:url" content="http://FernAbby.com/2017/04/18/Bootstrap-DatetimePicker常用配置/index.html">
+<meta property="og:site_name" content="FernAbby's Notes">
+<meta property="og:description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档
+选项所有需要”Date” 的选项都可以处理Date 对象;你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：yyyy-mm-ddyyyy-mm-dd hh:iiyyyy-mm-ddThh:iiyyyy-mm-dd hh:ii:ssyyyy-mm-ddTh">
+<meta property="og:image" content="http://FernAbby.com/images/myImages/views0.jpg">
+<meta property="og:image" content="http://FernAbby.com/images/myImages/views1.jpg">
+<meta property="og:updated_time" content="2017-04-19T06:53:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bootstrap DatetimePicker常用配置">
+<meta name="twitter:description" content="整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。参看demo实例API官方文档
+选项所有需要”Date” 的选项都可以处理Date 对象;你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：yyyy-mm-ddyyyy-mm-dd hh:iiyyyy-mm-ddThh:iiyyyy-mm-dd hh:ii:ssyyyy-mm-ddTh">
+<meta name="twitter:image" content="http://FernAbby.com/images/myImages/views0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'FernAbby'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://FernAbby.com/2017/04/18/Bootstrap-DatetimePicker常用配置/"/>
+
+
+
+
+
+  <title> Bootstrap DatetimePicker常用配置 | FernAbby's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">FernAbby's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">技术笔记分享</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://FernAbby.com/2017/04/18/Bootstrap-DatetimePicker常用配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FernAbby">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/13566690?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FernAbby's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Bootstrap DatetimePicker常用配置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-18T11:35:03+08:00">
+                2017-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bootstrap/" itemprop="url" rel="index">
+                    <span itemprop="name">Bootstrap</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/18/Bootstrap-DatetimePicker常用配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/18/Bootstrap-DatetimePicker常用配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/18/Bootstrap-DatetimePicker常用配置/" class="leancloud_visitors" data-flag-title="Bootstrap DatetimePicker常用配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>整理常用bootstrap-datetimepicker配置选项，以及一些方法和属性。<br><a href="https://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank" rel="external">参看demo实例</a><br><a href="http://www.bootcss.com/p/bootstrap-datetimepicker/" target="_blank" rel="external">API官方文档</a></p>
+<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><p>所有需要”Date” 的选项都可以处理Date 对象;<br>你也可以指定一个符合 ISO-8601 格式的日期时间，就可以忽略下面的格式：<br>yyyy-mm-dd<br>yyyy-mm-dd hh:ii<br>yyyy-mm-ddThh:ii<br>yyyy-mm-dd hh:ii:ss<br>yyyy-mm-ddThh:ii:ssZ</p>
+<h3 id="format"><a href="#format" class="headerlink" title="format"></a>format</h3><p>String. 默认值: ‘mm/dd/yyyy’<br>日期格式， p, P, h, hh, i, ii, s, ss, d, dd, m, mm, M, MM, yy, yyyy 的任意组合。<br>p : 上午(0:00-12-00)或者下午(12:00-24:00)的小写’am’或者’pm’<br>P : 上午(0:00-12-00)或者下午(12:00-24:00)的小写’AM’或者’PM’<br>s : 秒，没有前导零的秒数<br>ss : 秒，带前导零2位数<br>i : 分钟，没有前导零的分钟<br>ii : 分钟，带前导零2位数<br>h : 小时，没有前导零的小时 - 24小时制<br>hh : 小时，带前导零2位数 - 24小时制<br>H : 小时，没有前导零的小时 - 12小时制<br>HH : 小时，带前导零2位数- 12小时制<br>d : 天，没有前导零的天<br>dd : 天，带前导零2位数<br>m : 月，没有前导零的月<br>mm : 月，带前导零2位数<br>M : 英文字母的简写，三个字母Jan,Feb…<br>MM : 英文字母的全拼，如：January， March<br>yy : 年，后面两位 如：17<br>yyyy : 年，4位，如：2017</p>
+<h3 id="weekStart"><a href="#weekStart" class="headerlink" title="weekStart"></a>weekStart</h3><p>Integer. 默认值：0<br>一周从哪一天开始。0（星期日）到6（星期六）</p>
+<h3 id="startDate"><a href="#startDate" class="headerlink" title="startDate"></a>startDate</h3><p>Date. 默认值：开始时间<br>最小能选择的时间，更早的日期不能选择</p>
+<h3 id="endDate"><a href="#endDate" class="headerlink" title="endDate"></a>endDate</h3><p>Date. 默认值：结束时间<br>最大能选择的时间，之后的日期不能选择</p>
+<h3 id="daysOfWeekDisabled"><a href="#daysOfWeekDisabled" class="headerlink" title="daysOfWeekDisabled"></a>daysOfWeekDisabled</h3><p>String, Array. 默认值: ‘’, []<br>一周中不能选择的天，值从0(sunday)-6(saturday),多选值为字符串或者数组。如：‘0,6’或者［0,6］</p>
+<h3 id="autoclose"><a href="#autoclose" class="headerlink" title="autoclose"></a>autoclose</h3><p>Boolean. 默认值：false<br>当选择一个日期之后是否立即关闭此日期时间选择器。</p>
+<h3 id="startView"><a href="#startView" class="headerlink" title="startView"></a>startView</h3><p>Number, String. 默认值：2, ‘month’<br>日期时间选择器打开之后首先显示的视图。 可接受的值：<br>0 - 小时 视图<br>1 - 天 视图<br>2 - 月 视图<br>3 - 年 视图<br>4 - 十年 视图<br><img src="/images/myImages/views0.jpg" alt="视图截图" title="视图"><br><img src="/images/myImages/views1.jpg" alt="视图截图" title="视图"></p>
+<h3 id="minView"><a href="#minView" class="headerlink" title="minView"></a>minView</h3><p>Number, String. 默认值：0, ‘hour’<br>日期时间选择器所能够提供的最精确的时间选择视图。</p>
+<h3 id="maxView"><a href="#maxView" class="headerlink" title="maxView"></a>maxView</h3><p>Number, String. 默认值：4, ‘decade’<br>日期时间选择器最高能展示的选择范围视图。</p>
+<h3 id="todayBtn"><a href="#todayBtn" class="headerlink" title="todayBtn"></a>todayBtn</h3><p>Boolean, “linked”. 默认值: false<br>如果此值为true 或 “linked”，则在日期时间选择器组件的底部显示一个 “Today” 按钮用以选择当前日期。如果是true的话，”Today” 按钮仅仅将视图转到当天的日期，如果是”linked”，当天日期将会被选中。</p>
+<h3 id="todayHighlight"><a href="#todayHighlight" class="headerlink" title="todayHighlight"></a>todayHighlight</h3><p>Boolean. 默认值: false<br>如果为true, 高亮当前日期。</p>
+<h3 id="keyboardNavigation"><a href="#keyboardNavigation" class="headerlink" title="keyboardNavigation"></a>keyboardNavigation</h3><p>Boolean. 默认值: true<br>是否允许通过方向键改变日期。</p>
+<h3 id="language"><a href="#language" class="headerlink" title="language"></a>language</h3><p>String. 默认值: ‘en’<br>表示展示月、天的语言，如：English (‘en’),German (‘de’), Brazilian (‘br’),Spanish (‘es’),chinese(‘zh-CN’)…</p>
+<h3 id="forceParse"><a href="#forceParse" class="headerlink" title="forceParse"></a>forceParse</h3><p>Boolean. 默认值: true<br>当选择器关闭的时候，是否强制解析输入框中的值。也就是说，当用户在输入框中输入了不正确的日期，选择器将会尽量解析输入的值，并将解析后的正确值按照给定的格式format设置到输入框中。</p>
+<h3 id="minuteStep"><a href="#minuteStep" class="headerlink" title="minuteStep"></a>minuteStep</h3><p>Number. 默认值: 5<br>此数值被当做步进值用于构建小时视图。对于每个 minuteStep 都会生成一组预设时间（分钟）用于选择。</p>
+<h3 id="pickerReferer-不建议使用"><a href="#pickerReferer-不建议使用" class="headerlink" title="pickerReferer : 不建议使用"></a>pickerReferer : 不建议使用</h3><p>String. 默认值: ‘default’ (other value available : ‘input’)<br>选择器，如果要将组件放置在输入框之下，只需input。</p>
+<h3 id="pickerPosition"><a href="#pickerPosition" class="headerlink" title="pickerPosition"></a>pickerPosition</h3><p>String. 默认值: ‘bottom-right’ (还支持 : ‘bottom-left’)<br>此选项当前只在组件实现中提供支持。通过设置选项可以讲选择器放倒输入框下方。</p>
+<h3 id="viewSelect"><a href="#viewSelect" class="headerlink" title="viewSelect"></a>viewSelect</h3><p>Number or String. 默认值: same as minView (supported values are: ‘decade’, ‘year’, ‘month’, ‘day’, ‘hour’)</p>
+<p>With this option you can select the view from which the date will be selected. By default it’s the last one, however you can choose the first one, so at each click the date will be updated.</p>
+<h3 id="showMeridian"><a href="#showMeridian" class="headerlink" title="showMeridian"></a>showMeridian</h3><p>Boolean. 默认值: false<br>在视图上是否显示上午下午标识。</p>
+<h3 id="initialDate"><a href="#initialDate" class="headerlink" title="initialDate"></a>initialDate</h3><p>Date or String. 默认值: new Date()<br>视图初始值，默认当前日期，你也可以设置昨天,今天,明天…为当前日期。</p>
+<h2 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h2><p>组件模版。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;input-append date&quot; id=&quot;datetimepicker&quot; data-date=&quot;12-02-2012&quot; data-date-format=&quot;dd-mm-yyyy&quot;&gt;</div><div class="line">&lt;input class=&quot;span2&quot; size=&quot;16&quot; type=&quot;text&quot; value=&quot;12-02-2012&quot;&gt;</div><div class="line">&lt;span class=&quot;add-on&quot;&gt;&lt;i class=&quot;icon-th&quot;&gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>带有重置按钮（用于清空输入框）的组件模版。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;input-append date&quot; id=&quot;datetimepicker&quot; data-date=&quot;12-02-2012&quot; data-date-format=&quot;dd-mm-yyyy&quot;&gt;</div><div class="line">&lt;input class=&quot;span2&quot; size=&quot;16&quot; type=&quot;text&quot; value=&quot;12-02-2012&quot;&gt;</div><div class="line">&lt;span class=&quot;add-on&quot;&gt;&lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">&lt;span class=&quot;add-on&quot;&gt;&lt;i class=&quot;icon-th&quot;&gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="datetimepicker-options"><a href="#datetimepicker-options" class="headerlink" title=".datetimepicker(options)"></a>.datetimepicker(options)</h3><p>初始化日期时间选择器。</p>
+<h3 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h3><p>参数: None<br>移除日期时间选择器。同时移除已经绑定的event、内部绑定的对象和HTML元素。<br>$(‘#datetimepicker’).datetimepicker(‘remove’);</p>
+<h3 id="show"><a href="#show" class="headerlink" title="show"></a>show</h3><p>参数: None<br>显示日期时间选择器。<br>$(‘#datetimepicker’).datetimepicker(‘show’);</p>
+<h3 id="hide"><a href="#hide" class="headerlink" title="hide"></a>hide</h3><p>参数: None<br>隐藏日期时间选择器。<br>$(‘#datetimepicker’).datetimepicker(‘hide’);</p>
+<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><p>参数: None<br>使用当前输入框中的值更新日期时间选择器。<br>$(‘#datetimepicker’).datetimepicker(‘update’);</p>
+<h3 id="setStartDate"><a href="#setStartDate" class="headerlink" title="setStartDate"></a>setStartDate</h3><p>参数:startDate (String)<br>给日期时间选择器设置一个新的起始日期。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setStartDate&apos;, &apos;2012-01-01&apos;);</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setStartDate&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setStartDate&apos;, null);</div></pre></td></tr></table></figure>
+<h3 id="setEndDate"><a href="#setEndDate" class="headerlink" title="setEndDate"></a>setEndDate</h3><p>参数:endDate (String)<br>给日期时间选择器设置结束日期。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setEndDate&apos;, &apos;2012-01-01&apos;);</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setEndDate&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setEndDate&apos;, null);</div></pre></td></tr></table></figure>
+<h3 id="setDaysOfWeekDisabled"><a href="#setDaysOfWeekDisabled" class="headerlink" title="setDaysOfWeekDisabled"></a>setDaysOfWeekDisabled</h3><p>参数:daysOfWeekDisabled (String|Array)<br>设置一周中不能选择的天，值从0(sunday)-6(saturday),多选值为字符串或者数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setDaysOfWeekDisabled&apos;, [0,6]);</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setDaysOfWeekDisabled&apos;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&apos;setDaysOfWeekDisabled&apos;, null);</div></pre></td></tr></table></figure>
+<h2 id="事件（Events）"><a href="#事件（Events）" class="headerlink" title="事件（Events）"></a>事件（Events）</h2><p>Datetimepicker 类暴露了一组event用以对日期进行操作。</p>
+<h3 id="show-1"><a href="#show-1" class="headerlink" title="show"></a>show</h3><p>当选择器显示时被触发。</p>
+<h3 id="hide-1"><a href="#hide-1" class="headerlink" title="hide"></a>hide</h3><p>当选择器隐藏时被触发。</p>
+<h3 id="changeDate"><a href="#changeDate" class="headerlink" title="changeDate"></a>changeDate</h3><p>当日期被改变时被触发。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(&apos;#date-end&apos;)</div><div class="line">.datetimepicker()</div><div class="line">.on(&apos;changeDate&apos;, function(ev)&#123;</div><div class="line">if (ev.date.valueOf() &lt; date-start-display.valueOf())&#123;</div><div class="line">....</div><div class="line">&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="changeYear"><a href="#changeYear" class="headerlink" title="changeYear"></a>changeYear</h3><p>当十年视图上的年视图view被改变时触发。</p>
+<h3 id="changeMonth"><a href="#changeMonth" class="headerlink" title="changeMonth"></a>changeMonth</h3><p>当年视图上的月视图view被改变时触发。</p>
+<h3 id="outOfRange"><a href="#outOfRange" class="headerlink" title="outOfRange"></a>outOfRange</h3><p>当用户选择的日期超出startDate 或endDate 时，或者通过setDate 或 setUTCDate方法设置日期超出范围时被触发。</p>
+<h2 id="键盘支持"><a href="#键盘支持" class="headerlink" title="键盘支持"></a>键盘支持</h2><p>日期时间选择器提供了键盘导航：</p>
+<h3 id="up-down-left-right-方向键"><a href="#up-down-left-right-方向键" class="headerlink" title="up, down, left, right 方向键"></a>up, down, left, right 方向键</h3><p>这些方向键中，left/right 向后/向前 一天，up/down 向后/向前 一周。<br>配合shift键，up/left 向后退一个月，down/right 向前进一个月。<br>配置ctrl键，up/left 向后退一年，down/right 向前进一年。<br>Shift+ctrl 和 ctrl 同等效果 - 也就是说，他们不能同时改变月和年，只能单独改变年。</p>
+<h3 id="escape"><a href="#escape" class="headerlink" title="escape"></a>escape</h3><p>escape 键可以用来隐藏、重新显示日期时间选择器；当用户希望手工编辑输入框中的值是会很有用。</p>
+<h3 id="enter"><a href="#enter" class="headerlink" title="enter"></a>enter</h3><p>当选择器处于显示状态时，enter键只是将其隐藏。当选择器处于隐藏状态时，enter键发挥通常的功能 - 提交当前表单，或者其他。</p>
+<h2 id="I18N国际化"><a href="#I18N国际化" class="headerlink" title="I18N国际化"></a>I18N国际化</h2><p>本插件支持月、每周中天的名称、weekStart选项的国际化。默认是语言是English (‘en’);其它可以使用的翻译文件在js/locales/ 目录中，只需在本插件之后引入需要的语言文件即可。需要增加额外语言支持的话，只需向 $.fn.datetimepicker.dates中增加一个key即可，一定要放在调用 .datetimepicker()之前。如下案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$.fn.datetimepicker.dates[&apos;en&apos;] = &#123;</div><div class="line">days: [&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;],</div><div class="line">daysShort: [&quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;, &quot;Thu&quot;, &quot;Fri&quot;, &quot;Sat&quot;, &quot;Sun&quot;],</div><div class="line">daysMin: [&quot;Su&quot;, &quot;Mo&quot;, &quot;Tu&quot;, &quot;We&quot;, &quot;Th&quot;, &quot;Fr&quot;, &quot;Sa&quot;, &quot;Su&quot;],</div><div class="line">months: [&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;, &quot;August&quot;, &quot;September&quot;, &quot;October&quot;, &quot;November&quot;, &quot;December&quot;],</div><div class="line">monthsShort: [&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;],</div><div class="line">today: &quot;Today&quot;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>Right-to-left languages may also include rtl: true to make the calendar display appropriately.<br>If your browser (or those of your users) is displaying characters wrong, chances are the browser is loading the javascript file with a non-unicode encoding. Simply add charset=”UTF-8” to your script tag:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;bootstrap-datetimepicker.de.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>绑定输入框，并设置format选项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot; value=&quot;2012-05-15 21:05&quot; id=&quot;datetimepicker&quot;&gt;</div><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker(&#123;</div><div class="line">format: &apos;yyyy-mm-dd hh:ii&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>绑定输入框，并设置format标记：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot; value=&quot;2012-05-15 21:05&quot; id=&quot;datetimepicker&quot; data-date-format=&quot;yyyy-mm-dd hh:ii&quot;&gt;</div><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker();</div></pre></td></tr></table></figure></p>
+<p>作为组件使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;input-append date&quot; id=&quot;datetimepicker&quot; data-date=&quot;12-02-2012&quot; data-date-format=&quot;dd-mm-yyyy&quot;&gt;</div><div class="line">&lt;input size=&quot;16&quot; type=&quot;text&quot; value=&quot;12-02-2012&quot; readonly&gt;</div><div class="line">&lt;span class=&quot;add-on&quot;&gt;&lt;i class=&quot;icon-th&quot;&gt;&lt;/i&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker();</div></pre></td></tr></table></figure></p>
+<p>作为内联日期时间选择器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;datetimepicker&quot;&gt;&lt;/div&gt;</div><div class="line">$(&apos;#datetimepicker&apos;).datetimepicker();</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/myImages/wechatpay.png" alt="FernAbby WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/myImages/alipay.png" alt="FernAbby Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Bootstrap/" rel="tag"># Bootstrap</a>
+          
+            <a href="/tags/dateTimePicker/" rel="tag"># dateTimePicker</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/13/package-scripts在前端项目的使用/" rel="next" title="package scripts在前端项目的使用">
+                <i class="fa fa-chevron-left"></i> package scripts在前端项目的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/18/Bootstrap-DatetimePicker常用配置/"
+           data-title="Bootstrap DatetimePicker常用配置" data-url="http://FernAbby.com/2017/04/18/Bootstrap-DatetimePicker常用配置/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/13566690?v=3&s=460"
+               alt="FernAbby" />
+          <p class="site-author-name" itemprop="name">FernAbby</p>
+           
+              <p class="site-description motion-element" itemprop="description">分享技术笔记</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="https://fernabby.github.io/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/FernAbby" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/FernAbby" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://freecnpro.net" title="http://freecnpro.net" target="_blank">http://freecnpro.net</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#选项"><span class="nav-number">1.</span> <span class="nav-text">选项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#format"><span class="nav-number">1.1.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#weekStart"><span class="nav-number">1.2.</span> <span class="nav-text">weekStart</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#startDate"><span class="nav-number">1.3.</span> <span class="nav-text">startDate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#endDate"><span class="nav-number">1.4.</span> <span class="nav-text">endDate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#daysOfWeekDisabled"><span class="nav-number">1.5.</span> <span class="nav-text">daysOfWeekDisabled</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#autoclose"><span class="nav-number">1.6.</span> <span class="nav-text">autoclose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#startView"><span class="nav-number">1.7.</span> <span class="nav-text">startView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#minView"><span class="nav-number">1.8.</span> <span class="nav-text">minView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maxView"><span class="nav-number">1.9.</span> <span class="nav-text">maxView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#todayBtn"><span class="nav-number">1.10.</span> <span class="nav-text">todayBtn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#todayHighlight"><span class="nav-number">1.11.</span> <span class="nav-text">todayHighlight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyboardNavigation"><span class="nav-number">1.12.</span> <span class="nav-text">keyboardNavigation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#language"><span class="nav-number">1.13.</span> <span class="nav-text">language</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forceParse"><span class="nav-number">1.14.</span> <span class="nav-text">forceParse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#minuteStep"><span class="nav-number">1.15.</span> <span class="nav-text">minuteStep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pickerReferer-不建议使用"><span class="nav-number">1.16.</span> <span class="nav-text">pickerReferer : 不建议使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pickerPosition"><span class="nav-number">1.17.</span> <span class="nav-text">pickerPosition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#viewSelect"><span class="nav-number">1.18.</span> <span class="nav-text">viewSelect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#showMeridian"><span class="nav-number">1.19.</span> <span class="nav-text">showMeridian</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initialDate"><span class="nav-number">1.20.</span> <span class="nav-text">initialDate</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标记"><span class="nav-number">2.</span> <span class="nav-text">标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#datetimepicker-options"><span class="nav-number">3.1.</span> <span class="nav-text">.datetimepicker(options)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove"><span class="nav-number">3.2.</span> <span class="nav-text">remove</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#show"><span class="nav-number">3.3.</span> <span class="nav-text">show</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hide"><span class="nav-number">3.4.</span> <span class="nav-text">hide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-number">3.5.</span> <span class="nav-text">update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setStartDate"><span class="nav-number">3.6.</span> <span class="nav-text">setStartDate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setEndDate"><span class="nav-number">3.7.</span> <span class="nav-text">setEndDate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setDaysOfWeekDisabled"><span class="nav-number">3.8.</span> <span class="nav-text">setDaysOfWeekDisabled</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件（Events）"><span class="nav-number">4.</span> <span class="nav-text">事件（Events）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#show-1"><span class="nav-number">4.1.</span> <span class="nav-text">show</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hide-1"><span class="nav-number">4.2.</span> <span class="nav-text">hide</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#changeDate"><span class="nav-number">4.3.</span> <span class="nav-text">changeDate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#changeYear"><span class="nav-number">4.4.</span> <span class="nav-text">changeYear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#changeMonth"><span class="nav-number">4.5.</span> <span class="nav-text">changeMonth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#outOfRange"><span class="nav-number">4.6.</span> <span class="nav-text">outOfRange</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#键盘支持"><span class="nav-number">5.</span> <span class="nav-text">键盘支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#up-down-left-right-方向键"><span class="nav-number">5.1.</span> <span class="nav-text">up, down, left, right 方向键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#escape"><span class="nav-number">5.2.</span> <span class="nav-text">escape</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#enter"><span class="nav-number">5.3.</span> <span class="nav-text">enter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I18N国际化"><span class="nav-number">6.</span> <span class="nav-text">I18N国际化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">7.</span> <span class="nav-text">使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FernAbby</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"FernAbby"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("js6kVg4JEEgPptEwAuG6saU2-gzGzoHsz", "NROBfz0nQU50yMFLc7yDf92c");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
