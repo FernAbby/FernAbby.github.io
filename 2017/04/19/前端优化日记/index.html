@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="webpack," />
+  <meta name="keywords" content="前端优化," />
 
 
 
@@ -89,16 +89,49 @@
 
 
 
-<meta name="description" content="什么是 WebpackWebpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。">
+<meta name="description" content="影响用户观感的时间主要如下:
+
+连接建立时间（特别是多个连接的时候）
+发送请求时间
+等待响应时间 
+下载内容时间
+解析(rendering)内容时间那么优化就大体分为三个方面：
+
+
+缓存优化
+网络优化(TCP协议优化，降低连接次数)
+内容优化(内容尺寸优化，内容压缩)图片资源优化一般图片资源会遇到”请求数多、资源浪费、加载体验”等问题.减少请求减少图片额外请求数，一般有三个方法：图片合并、icon">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack">
-<meta property="og:url" content="http://FernAbby.com/2017/04/06/webpack/index.html">
+<meta property="og:title" content="前端优化日记">
+<meta property="og:url" content="http://FernAbby.com/2017/04/19/前端优化日记/index.html">
 <meta property="og:site_name" content="FernAbby's Notes">
-<meta property="og:description" content="什么是 WebpackWebpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。">
-<meta property="og:updated_time" content="2017-04-19T09:23:40.000Z">
+<meta property="og:description" content="影响用户观感的时间主要如下:
+
+连接建立时间（特别是多个连接的时候）
+发送请求时间
+等待响应时间 
+下载内容时间
+解析(rendering)内容时间那么优化就大体分为三个方面：
+
+
+缓存优化
+网络优化(TCP协议优化，降低连接次数)
+内容优化(内容尺寸优化，内容压缩)图片资源优化一般图片资源会遇到”请求数多、资源浪费、加载体验”等问题.减少请求减少图片额外请求数，一般有三个方法：图片合并、icon">
+<meta property="og:updated_time" content="2017-05-03T03:21:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack">
-<meta name="twitter:description" content="什么是 WebpackWebpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。">
+<meta name="twitter:title" content="前端优化日记">
+<meta name="twitter:description" content="影响用户观感的时间主要如下:
+
+连接建立时间（特别是多个连接的时候）
+发送请求时间
+等待响应时间 
+下载内容时间
+解析(rendering)内容时间那么优化就大体分为三个方面：
+
+
+缓存优化
+网络优化(TCP协议优化，降低连接次数)
+内容优化(内容尺寸优化，内容压缩)图片资源优化一般图片资源会遇到”请求数多、资源浪费、加载体验”等问题.减少请求减少图片额外请求数，一般有三个方法：图片合并、icon">
 
 
 
@@ -126,13 +159,13 @@
 
 
 
-  <link rel="canonical" href="http://FernAbby.com/2017/04/06/webpack/"/>
+  <link rel="canonical" href="http://FernAbby.com/2017/04/19/前端优化日记/"/>
 
 
 
 
 
-  <title> webpack | FernAbby's Notes </title>
+  <title> 前端优化日记 | FernAbby's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +304,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://FernAbby.com/2017/04/06/webpack/">
+    <link itemprop="mainEntityOfPage" href="http://FernAbby.com/2017/04/19/前端优化日记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="FernAbby">
@@ -292,7 +325,7 @@
             
             
               
-                webpack
+                前端优化日记
               
             
           </h1>
@@ -307,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T17:16:40+08:00">
-                2017-04-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:48:06+08:00">
+                2017-04-19
               </time>
             
 
@@ -318,28 +351,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/webpack/" itemprop="url" rel="index">
-                    <span itemprop="name">webpack</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -348,8 +359,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/06/webpack/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/06/webpack/" itemprop="commentCount"></span>
+                <a href="/2017/04/19/前端优化日记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/19/前端优化日记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +368,7 @@
 
           
           
-             <span id="/2017/04/06/webpack/" class="leancloud_visitors" data-flag-title="webpack">
+             <span id="/2017/04/19/前端优化日记/" class="leancloud_visitors" data-flag-title="前端优化日记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,10 +388,6 @@
 
         </div>
       
-        <div class="out-img-topic">
-          <img src="/images/myImages/what-is-webpack.png" class="img-topic">
-        </div>
-      
       </header>
     
 
@@ -391,15 +398,27 @@
       
 
       
-        <h2 id="什么是-Webpack"><a href="#什么是-Webpack" class="headerlink" title="什么是 Webpack"></a>什么是 Webpack</h2><p><a href="http://webpackdoc.com/" target="_blank" rel="external">Webpack</a> 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。<br><a id="more"></a><br>这些已有的模块化工具并不能很好的完成如下的目标：<br>将依赖树拆分成按需加载的块<br>初始化加载的耗时尽量少<br>各种静态资源都可以视作模块<br>将第三方库整合成模块的能力<br>可以自定义打包逻辑的能力<br>适合大项目，无论是单页还是多页的 Web 应用</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install webpack -g</div></pre></td></tr></table></figure></p>
-<p>项目中安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 进入项目目录</div><div class="line"># 确定已经有 package.json，没有就通过 npm init 创建</div><div class="line"># 安装 webpack 依赖</div><div class="line">$ npm install webpack --save-dev</div></pre></td></tr></table></figure></p>
-<p>查看 webpack 版本信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm info webpack</div></pre></td></tr></table></figure></p>
-<p>安装指定版本的 webpack<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install webpack@1.12.x --save-dev</div></pre></td></tr></table></figure></p>
-<p>安装 Webpack 开发工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install webpack-dev-server --save-dev</div></pre></td></tr></table></figure></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack &lt;entry&gt; &lt;output&gt;</div></pre></td></tr></table></figure>
-<p>编译entry.js 并打包到 bundle.js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ webpack entry.js bundle.js</div></pre></td></tr></table></figure></p>
-<h3 id="webpack常用配置"><a href="#webpack常用配置" class="headerlink" title="webpack常用配置"></a>webpack常用配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	entry:打包的入口文件，一个字符串或者一个对象,有多少个页面就有多少个入口，如果是单页面应用，就只有一个入口</div><div class="line">	output:配置打包的结果，一个对象</div><div class="line">	fileName：定义输出文件名，一个字符串</div><div class="line">	path：定义输出文件路径，一个字符串</div><div class="line">	module:定义对模块的处理逻辑，一个对象</div><div class="line">	loaders：定义一系列的加载器，一个数组</div><div class="line">	[&#123;</div><div class="line">		test:正则表达式，用于匹配到的文件</div><div class="line">		loader/loaders：字符串或者数组，处理匹配到的文件。如果只需要用到一个模块加载器则使用　　　　　　　　　　　　　　　　　loader：string，		如果要使用多个模块加载器，则使用loaders：array</div><div class="line">		include:字符串或者数组，指包含的文件夹</div><div class="line">		exclude:字符串或者数组，指排除的文件夹</div><div class="line">    &#125;]</div><div class="line">	resolve:影响对模块的解析，一个对象</div><div class="line">	extensions：自动补全识别后缀，是一个数组</div><div class="line">	plugins:定义插件，一个数组</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>影响用户观感的时间主要如下:</p>
+<ol>
+<li>连接建立时间（特别是多个连接的时候）</li>
+<li>发送请求时间</li>
+<li>等待响应时间 </li>
+<li>下载内容时间</li>
+<li>解析(rendering)内容时间<br>那么优化就大体分为三个方面：</li>
+</ol>
+<ul>
+<li>缓存优化</li>
+<li>网络优化(TCP协议优化，降低连接次数)</li>
+<li>内容优化(内容尺寸优化，内容压缩)<h2 id="图片资源优化"><a href="#图片资源优化" class="headerlink" title="图片资源优化"></a>图片资源优化</h2>一般图片资源会遇到”请求数多、资源浪费、加载体验”等问题.<h3 id="减少请求"><a href="#减少请求" class="headerlink" title="减少请求"></a>减少请求</h3>减少图片额外请求数，一般有三个方法：图片合并、iconfont 图标、Base64，三个方法都有各自的优缺点：</li>
+<li>图片合并(如sprite图)<br>优点：兼容性强可缓存可提前加载多态图可提升图片加载显示体验<br>缺点：维护性差、合并图片类型以及大小控制限制高、有可能造成资源浪费<br>适合：修改更新少的常驻型低色位的装饰小图</li>
+<li>Iconfont<br>优点：可缓存矢量性可控性强<br>缺点：存在浏览器渲染差异性、只能纯色、文件体积略大<br>适合：纯色图标</li>
+<li>Base64<br>优点：无额外请求<br>缺点：不可缓存、兼容性差、代码冗余、可读性差、维护不便、CPU内存耗损大<br>适合：体积小复用率低的背景装饰图标<h3 id="图片按需加载"><a href="#图片按需加载" class="headerlink" title="图片按需加载"></a>图片按需加载</h3>典型的就是懒加载<h3 id="占位提示图提高加载体验"><a href="#占位提示图提高加载体验" class="headerlink" title="占位提示图提高加载体验"></a>占位提示图提高加载体验</h3>图片加载的时间长短由很多因素决定，如服务器响应时间、用户所用网络带宽、图片大小等，但无论是哪一种情况，总有一个等待的过程，在这过程总会有一个空白时间，<br>特别是占屏面积比较大的首屏轮播大图和采取懒加载的图片，即使图片空白时间很短，用户也会有不同程度的感知，会给用户带来一种唐突或漫长等待的感觉，<br>如果加载过程给图片加上体积比较小的占位提示图，则会让用户有一个图片加载预知，当图片加载完成后再呈现给用户看，这样用户在图片加载过程中看到的都是完整的图片<br>还有当图片加载失败的时候，展示占位图，避免系统默认的图片加载失败图标出现<h3 id="压缩源码或者图片"><a href="#压缩源码或者图片" class="headerlink" title="压缩源码或者图片"></a>压缩源码或者图片</h3>js文件源代码可以采用混淆压缩的方式，<br>css文件的源代码可以进行普通的压缩，<br>JPG图片可以根据具体的质量来压缩为50%-70%，<br>PNG图片可以使用一些压缩软件来压缩，比如24色变成8色，去掉一些PNG格式信息等。<h3 id="选择合适的图片格式"><a href="#选择合适的图片格式" class="headerlink" title="选择合适的图片格式"></a>选择合适的图片格式</h3>如果图片的颜色数较多就用JPG格式，<br>如果图片的颜色数较少就用PNG格式，<br>如果能通过服务器端判断浏览器支持webP，那就用webP和SVG格式<h3 id="开启服务器端的Gzip压缩"><a href="#开启服务器端的Gzip压缩" class="headerlink" title="开启服务器端的Gzip压缩"></a>开启服务器端的Gzip压缩</h3>这对文本资源非常有效，对图片资源没多大的压缩比率<h3 id="使用CDN"><a href="#使用CDN" class="headerlink" title="使用CDN"></a>使用CDN</h3>传统cdn的cache就作用于第三个环节——等待响应时间<br>CDN的全称是Content Delivery Network，即内容分发网络。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。类似分布各地的物流仓储网络，CDN网络可以将源站的内容缓存到分布全球的CDN节点，根据用户的访问IP，就近连接CDN，提高网站响应速度。如：又拍云、腾讯云等<h3 id="高清图适配优化"><a href="#高清图适配优化" class="headerlink" title="高清图适配优化"></a>高清图适配优化</h3>非纯色图通常用『2X』图适配，适配方案可以有很多选择：媒体查询、srcset属性、image-set属性、脚本控制。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;images/demo@1x.png&quot; srcset=&quot;images/demo@1x.png 1x, images/demo@2x.png 2x&quot; alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.chain_item_icon&#123;</div><div class="line">    background-image: -webkit-image-set(url(&quot;images/demo@1x.png&quot;) 1x, url(&quot;images/demo@2x.png&quot;) 2x);</div><div class="line">    background-image: image-set(url(&quot;images/demo@1x.png&quot;) 1x, url(&quot;images/demo@2x.png&quot;) 2x);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="设计类字体"><a href="#设计类字体" class="headerlink" title="设计类字体"></a>设计类字体</h3><p>设计类字体的实现只能用图片或通过样式 @font-face 属性去实现<br>图片方案：虽然可以高精度还原，兼容性强，但是每改动一处地方都需要换图，不方便维护，内容扩展性差，而且如果要适配高清设备，又得多一套图。<br>@font-face 属性方案：字体具有矢量性，高清设备可以轻松适配，内容扩展性强，但是不同的浏览器存在渲染的差异，兼容性略弱，@font-face 字体文件大小一般又是 M 级别，会不同程度影响页面加载体验。<br>［推荐Fontmin](<a href="http://ecomfe.github.io/fontmin/tw#feature" target="_blank" rel="external">http://ecomfe.github.io/fontmin/tw#feature</a>)</p>
+<h3 id="延长静态资源缓存时间"><a href="#延长静态资源缓存时间" class="headerlink" title="延长静态资源缓存时间"></a>延长静态资源缓存时间</h3><p>这里要注意，要通过修改文件名的方式，确保在资源更新的时候，用户可以拉到最新的内容（时间戳 版本号）<br>或则一些公开库使用第三方提供的静态资源地址（jquery angular）。这样一方面增加并发下载量，另一方面能够和其他网站共享缓存</p>
+
       
     </div>
 
@@ -443,7 +462,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/webpack/" rel="tag"># webpack</a>
+            <a href="/tags/前端优化/" rel="tag"># 前端优化</a>
           
         </div>
       
@@ -456,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/25/NodeJS的exports属性/" rel="next" title="Node.js的exports属性">
-                <i class="fa fa-chevron-left"></i> Node.js的exports属性
+              <a href="/2017/04/18/Bootstrap-DatetimePicker常用配置/" rel="next" title="Bootstrap DatetimePicker常用配置">
+                <i class="fa fa-chevron-left"></i> Bootstrap DatetimePicker常用配置
               </a>
             
           </div>
@@ -465,10 +484,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/13/package-scripts在前端项目的使用/" rel="prev" title="package scripts在前端项目的使用">
-                package scripts在前端项目的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -494,8 +509,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/04/06/webpack/"
-           data-title="webpack" data-url="http://FernAbby.com/2017/04/06/webpack/">
+      <div class="ds-thread" data-thread-key="2017/04/19/前端优化日记/"
+           data-title="前端优化日记" data-url="http://FernAbby.com/2017/04/19/前端优化日记/">
       </div>
     
   </div>
@@ -638,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Webpack"><span class="nav-number">1.</span> <span class="nav-text">什么是 Webpack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack常用配置"><span class="nav-number">3.1.</span> <span class="nav-text">webpack常用配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片资源优化"><span class="nav-number">1.</span> <span class="nav-text">图片资源优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#减少请求"><span class="nav-number">1.1.</span> <span class="nav-text">减少请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片按需加载"><span class="nav-number">1.2.</span> <span class="nav-text">图片按需加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#占位提示图提高加载体验"><span class="nav-number">1.3.</span> <span class="nav-text">占位提示图提高加载体验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩源码或者图片"><span class="nav-number">1.4.</span> <span class="nav-text">压缩源码或者图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择合适的图片格式"><span class="nav-number">1.5.</span> <span class="nav-text">选择合适的图片格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启服务器端的Gzip压缩"><span class="nav-number">1.6.</span> <span class="nav-text">开启服务器端的Gzip压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用CDN"><span class="nav-number">1.7.</span> <span class="nav-text">使用CDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高清图适配优化"><span class="nav-number">1.8.</span> <span class="nav-text">高清图适配优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计类字体"><span class="nav-number">1.9.</span> <span class="nav-text">设计类字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延长静态资源缓存时间"><span class="nav-number">1.10.</span> <span class="nav-text">延长静态资源缓存时间</span></a></li></ol></li></ol></div>
             
 
           </div>
