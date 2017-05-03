@@ -89,16 +89,52 @@
 
 
 
-<meta name="description" content="影响用户观感的时间主要如下:1.连接建立时间（特别是多个连接的时候）2.发送请求时间3.等待响应时间4.下载内容时间5.解析(rendering)内容时间那么优化就大体分为三个方面：-缓存优化-网络优化(TCP协议优化，降低连接次数)-内容优化(内容尺寸优化，内容压缩)">
+<meta name="description" content="影响用户观感的时间主要如下:
+
+连接建立时间（特别是多个连接的时候）
+发送请求时间
+等待响应时间 
+下载内容时间
+解析(rendering)内容时间
+
+那么优化就大体分为三个方面：
+
+缓存优化
+网络优化(TCP协议优化，降低连接次数)
+内容优化(内容尺寸优化，内容压缩)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端优化日记">
 <meta property="og:url" content="http://FernAbby.com/2017/04/19/前端优化日记/index.html">
 <meta property="og:site_name" content="FernAbby's Notes">
-<meta property="og:description" content="影响用户观感的时间主要如下:1.连接建立时间（特别是多个连接的时候）2.发送请求时间3.等待响应时间4.下载内容时间5.解析(rendering)内容时间那么优化就大体分为三个方面：-缓存优化-网络优化(TCP协议优化，降低连接次数)-内容优化(内容尺寸优化，内容压缩)">
-<meta property="og:updated_time" content="2017-05-03T03:31:46.000Z">
+<meta property="og:description" content="影响用户观感的时间主要如下:
+
+连接建立时间（特别是多个连接的时候）
+发送请求时间
+等待响应时间 
+下载内容时间
+解析(rendering)内容时间
+
+那么优化就大体分为三个方面：
+
+缓存优化
+网络优化(TCP协议优化，降低连接次数)
+内容优化(内容尺寸优化，内容压缩)">
+<meta property="og:updated_time" content="2017-05-03T03:36:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端优化日记">
-<meta name="twitter:description" content="影响用户观感的时间主要如下:1.连接建立时间（特别是多个连接的时候）2.发送请求时间3.等待响应时间4.下载内容时间5.解析(rendering)内容时间那么优化就大体分为三个方面：-缓存优化-网络优化(TCP协议优化，降低连接次数)-内容优化(内容尺寸优化，内容压缩)">
+<meta name="twitter:description" content="影响用户观感的时间主要如下:
+
+连接建立时间（特别是多个连接的时候）
+发送请求时间
+等待响应时间 
+下载内容时间
+解析(rendering)内容时间
+
+那么优化就大体分为三个方面：
+
+缓存优化
+网络优化(TCP协议优化，降低连接次数)
+内容优化(内容尺寸优化，内容压缩)">
 
 
 
@@ -387,10 +423,20 @@
       
 
       
-        <p>影响用户观感的时间主要如下:<br>1.连接建立时间（特别是多个连接的时候）<br>2.发送请求时间<br>3.等待响应时间<br>4.下载内容时间<br>5.解析(rendering)内容时间<br>那么优化就大体分为三个方面：<br>-缓存优化<br>-网络优化(TCP协议优化，降低连接次数)<br>-内容优化(内容尺寸优化，内容压缩)<br><a id="more"></a></p>
-<h2 id="图片资源优化"><a href="#图片资源优化" class="headerlink" title="图片资源优化"></a>图片资源优化</h2><p>一般图片资源会遇到”请求数多、资源浪费、加载体验”等问题.</p>
-<h3 id="减少请求"><a href="#减少请求" class="headerlink" title="减少请求"></a>减少请求</h3><p>减少图片额外请求数，一般有三个方法：图片合并、iconfont 图标、Base64，三个方法都有各自的优缺点：</p>
+        <p>影响用户观感的时间主要如下:</p>
+<ol>
+<li>连接建立时间（特别是多个连接的时候）</li>
+<li>发送请求时间</li>
+<li>等待响应时间 </li>
+<li>下载内容时间</li>
+<li>解析(rendering)内容时间</li>
+</ol>
+<p>那么优化就大体分为三个方面：</p>
 <ul>
+<li>缓存优化</li>
+<li>网络优化(TCP协议优化，降低连接次数)</li>
+<li>内容优化(内容尺寸优化，内容压缩)<a id="more"></a>
+<h2 id="图片资源优化"><a href="#图片资源优化" class="headerlink" title="图片资源优化"></a>图片资源优化</h2>一般图片资源会遇到”请求数多、资源浪费、加载体验”等问题.<h3 id="减少请求"><a href="#减少请求" class="headerlink" title="减少请求"></a>减少请求</h3>减少图片额外请求数，一般有三个方法：图片合并、iconfont 图标、Base64，三个方法都有各自的优缺点：</li>
 <li>图片合并(如sprite图)<br>优点：兼容性强可缓存可提前加载多态图可提升图片加载显示体验<br>缺点：维护性差、合并图片类型以及大小控制限制高、有可能造成资源浪费<br>适合：修改更新少的常驻型低色位的装饰小图</li>
 <li>Iconfont<br>优点：可缓存矢量性可控性强<br>缺点：存在浏览器渲染差异性、只能纯色、文件体积略大<br>适合：纯色图标</li>
 <li>Base64<br>优点：无额外请求<br>缺点：不可缓存、兼容性差、代码冗余、可读性差、维护不便、CPU内存耗损大<br>适合：体积小复用率低的背景装饰图标<h3 id="图片按需加载"><a href="#图片按需加载" class="headerlink" title="图片按需加载"></a>图片按需加载</h3>典型的就是懒加载<h3 id="占位提示图提高加载体验"><a href="#占位提示图提高加载体验" class="headerlink" title="占位提示图提高加载体验"></a>占位提示图提高加载体验</h3>图片加载的时间长短由很多因素决定，如服务器响应时间、用户所用网络带宽、图片大小等，但无论是哪一种情况，总有一个等待的过程，在这过程总会有一个空白时间，<br>特别是占屏面积比较大的首屏轮播大图和采取懒加载的图片，即使图片空白时间很短，用户也会有不同程度的感知，会给用户带来一种唐突或漫长等待的感觉，<br>如果加载过程给图片加上体积比较小的占位提示图，则会让用户有一个图片加载预知，当图片加载完成后再呈现给用户看，这样用户在图片加载过程中看到的都是完整的图片<br>还有当图片加载失败的时候，展示占位图，避免系统默认的图片加载失败图标出现<h3 id="压缩源码或者图片"><a href="#压缩源码或者图片" class="headerlink" title="压缩源码或者图片"></a>压缩源码或者图片</h3>js文件源代码可以采用混淆压缩的方式，<br>css文件的源代码可以进行普通的压缩，<br>JPG图片可以根据具体的质量来压缩为50%-70%，<br>PNG图片可以使用一些压缩软件来压缩，比如24色变成8色，去掉一些PNG格式信息等。<h3 id="选择合适的图片格式"><a href="#选择合适的图片格式" class="headerlink" title="选择合适的图片格式"></a>选择合适的图片格式</h3>如果图片的颜色数较多就用JPG格式，<br>如果图片的颜色数较少就用PNG格式，<br>如果能通过服务器端判断浏览器支持webP，那就用webP和SVG格式<h3 id="开启服务器端的Gzip压缩"><a href="#开启服务器端的Gzip压缩" class="headerlink" title="开启服务器端的Gzip压缩"></a>开启服务器端的Gzip压缩</h3>这对文本资源非常有效，对图片资源没多大的压缩比率<h3 id="使用CDN"><a href="#使用CDN" class="headerlink" title="使用CDN"></a>使用CDN</h3>传统cdn的cache就作用于第三个环节——等待响应时间<br>CDN的全称是Content Delivery Network，即内容分发网络。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。类似分布各地的物流仓储网络，CDN网络可以将源站的内容缓存到分布全球的CDN节点，根据用户的访问IP，就近连接CDN，提高网站响应速度。如：又拍云、腾讯云等<h3 id="高清图适配优化"><a href="#高清图适配优化" class="headerlink" title="高清图适配优化"></a>高清图适配优化</h3>非纯色图通常用『2X』图适配，适配方案可以有很多选择：媒体查询、srcset属性、image-set属性、脚本控制。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;images/demo@1x.png&quot; srcset=&quot;images/demo@1x.png 1x, images/demo@2x.png 2x&quot; alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
