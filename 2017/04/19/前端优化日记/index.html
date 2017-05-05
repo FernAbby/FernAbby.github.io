@@ -111,7 +111,8 @@
 解析(rendering)内容时间
 
 那么优化就大体分为三个方面：缓存优化、网络优化(TCP协议优化，降低连接次数)、内容优化(内容尺寸优化，内容压缩)">
-<meta property="og:updated_time" content="2017-05-03T06:01:14.000Z">
+<meta property="og:image" content="http://FernAbby.com/${tourism.image}!wechatQ3640270">
+<meta property="og:updated_time" content="2017-05-05T03:46:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端优化日记">
 <meta name="twitter:description" content="影响用户观感的时间主要如下:
@@ -123,6 +124,7 @@
 解析(rendering)内容时间
 
 那么优化就大体分为三个方面：缓存优化、网络优化(TCP协议优化，降低连接次数)、内容优化(内容尺寸优化，内容压缩)">
+<meta name="twitter:image" content="http://FernAbby.com/${tourism.image}!wechatQ3640270">
 
 
 
@@ -435,8 +437,17 @@
 <h3 id="使用CDN"><a href="#使用CDN" class="headerlink" title="使用CDN"></a>使用CDN</h3><p>传统cdn的cache就作用于第三个环节——等待响应时间<br>CDN的全称是Content Delivery Network，即内容分发网络。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。类似分布各地的物流仓储网络，CDN网络可以将源站的内容缓存到分布全球的CDN节点，根据用户的访问IP，就近连接CDN，提高网站响应速度。如：又拍云、腾讯云等</p>
 <h3 id="高清图适配优化"><a href="#高清图适配优化" class="headerlink" title="高清图适配优化"></a>高清图适配优化</h3><p>非纯色图通常用『2X』图适配，适配方案可以有很多选择：媒体查询、srcset属性、image-set属性、脚本控制。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;images/demo@1x.png&quot; srcset=&quot;images/demo@1x.png 1x, images/demo@2x.png 2x&quot; alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.chain_item_icon&#123;</div><div class="line">    background-image: -webkit-image-set(url(&quot;images/demo@1x.png&quot;) 1x, url(&quot;images/demo@2x.png&quot;) 2x);</div><div class="line">    background-image: image-set(url(&quot;images/demo@1x.png&quot;) 1x, url(&quot;images/demo@2x.png&quot;) 2x);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="设计类字体"><a href="#设计类字体" class="headerlink" title="设计类字体"></a>设计类字体</h3><p>设计类字体的实现只能用图片或通过样式 @font-face 属性去实现<br>图片方案：虽然可以高精度还原，兼容性强，但是每改动一处地方都需要换图，不方便维护，内容扩展性差，而且如果要适配高清设备，又得多一套图。<br>@font-face 属性方案：字体具有矢量性，高清设备可以轻松适配，内容扩展性强，但是不同的浏览器存在渲染的差异，兼容性略弱，@font-face 字体文件大小一般又是 M 级别，会不同程度影响页面加载体验。<br>［推荐Fontmin](<a href="http://ecomfe.github.io/fontmin/tw#feature" target="_blank" rel="external">http://ecomfe.github.io/fontmin/tw#feature</a>)</p>
-<h3 id="延长静态资源缓存时间"><a href="#延长静态资源缓存时间" class="headerlink" title="延长静态资源缓存时间"></a>延长静态资源缓存时间</h3><p>这里要注意，要通过修改文件名的方式，确保在资源更新的时候，用户可以拉到最新的内容（时间戳 版本号）<br>或则一些公开库使用第三方提供的静态资源地址（jquery angular）。这样一方面增加并发下载量，另一方面能够和其他网站共享缓存</p>
+<p><img src="${tourism.image}!wechatQ3640270" alt=""></p>
+<h3 id="设计类字体"><a href="#设计类字体" class="headerlink" title="设计类字体"></a>设计类字体</h3><p>设计类字体的实现只能用图片或通过样式 @font-face 属性去实现<br>图片方案：虽然可以高精度还原，兼容性强，但是每改动一处地方都需要换图，不方便维护，内容扩展性差，而且如果要适配高清设备，又得多一套图。<br>@font-face 属性方案：字体具有矢量性，高清设备可以轻松适配，内容扩展性强，但是不同的浏览器存在渲染的差异，兼容性略弱，@font-face 字体文件大小一般又是 M 级别，会不同程度影响页面加载体验。<br><a href="http://ecomfe.github.io/fontmin/tw#feature" target="_blank" rel="external">推荐Fontmin</a></p>
+<h2 id="延长静态资源缓存时间"><a href="#延长静态资源缓存时间" class="headerlink" title="延长静态资源缓存时间"></a>延长静态资源缓存时间</h2><p>这里要注意，要通过修改文件名的方式，确保在资源更新的时候，用户可以拉到最新的内容（时间戳 版本号）<br>或则一些公开库使用第三方提供的静态资源地址（jquery angular）。这样一方面增加并发下载量，另一方面能够和其他网站共享缓存</p>
+<h2 id="其他的一些小技巧"><a href="#其他的一些小技巧" class="headerlink" title="其他的一些小技巧"></a>其他的一些小技巧</h2><ul>
+<li>将CSS样式表放在顶部，将javascript脚本放在底部</li>
+<li>避免使用CSS表达式</li>
+<li>使用外部javascript和CSS内联js和css其实比外部文件有更快的响应速度，浏览器会缓存用外部的js和css</li>
+<li>压缩合并外部javascript和CSS文件</li>
+<li>避免重定向，实际开发中避免重定向最简单也最容易被忽视的一个问题就是，设置URL的时候，最后的“/”，有些人有时候会忽略，其实你少了“/”，这时候的URL就被重定向了，所以在给页面链接加URL的时候切记最后的“/”不可丢。</li>
+<li>删除重复脚本</li>
+</ul>
 
       
     </div>
@@ -672,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片资源优化"><span class="nav-number">1.</span> <span class="nav-text">图片资源优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#减少请求"><span class="nav-number">1.1.</span> <span class="nav-text">减少请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片按需加载"><span class="nav-number">1.2.</span> <span class="nav-text">图片按需加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#占位提示图提高加载体验"><span class="nav-number">1.3.</span> <span class="nav-text">占位提示图提高加载体验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩源码或者图片"><span class="nav-number">1.4.</span> <span class="nav-text">压缩源码或者图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择合适的图片格式"><span class="nav-number">1.5.</span> <span class="nav-text">选择合适的图片格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启服务器端的Gzip压缩"><span class="nav-number">1.6.</span> <span class="nav-text">开启服务器端的Gzip压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用CDN"><span class="nav-number">1.7.</span> <span class="nav-text">使用CDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高清图适配优化"><span class="nav-number">1.8.</span> <span class="nav-text">高清图适配优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计类字体"><span class="nav-number">1.9.</span> <span class="nav-text">设计类字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延长静态资源缓存时间"><span class="nav-number">1.10.</span> <span class="nav-text">延长静态资源缓存时间</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片资源优化"><span class="nav-number">1.</span> <span class="nav-text">图片资源优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#减少请求"><span class="nav-number">1.1.</span> <span class="nav-text">减少请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片按需加载"><span class="nav-number">1.2.</span> <span class="nav-text">图片按需加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#占位提示图提高加载体验"><span class="nav-number">1.3.</span> <span class="nav-text">占位提示图提高加载体验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩源码或者图片"><span class="nav-number">1.4.</span> <span class="nav-text">压缩源码或者图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择合适的图片格式"><span class="nav-number">1.5.</span> <span class="nav-text">选择合适的图片格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启服务器端的Gzip压缩"><span class="nav-number">1.6.</span> <span class="nav-text">开启服务器端的Gzip压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用CDN"><span class="nav-number">1.7.</span> <span class="nav-text">使用CDN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高清图适配优化"><span class="nav-number">1.8.</span> <span class="nav-text">高清图适配优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计类字体"><span class="nav-number">1.9.</span> <span class="nav-text">设计类字体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#延长静态资源缓存时间"><span class="nav-number">2.</span> <span class="nav-text">延长静态资源缓存时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他的一些小技巧"><span class="nav-number">3.</span> <span class="nav-text">其他的一些小技巧</span></a></li></ol></div>
             
 
           </div>
