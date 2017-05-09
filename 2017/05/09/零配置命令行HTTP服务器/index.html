@@ -89,16 +89,22 @@
 
 
 
-<meta name="description" content="http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs.如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个.安装 (全局安装加 -g) : npm install http-server使用 :在站点目录下开启命令行输入 node http-server使用于package.json “scripts”: {     “start”:">
+<meta name="description" content="http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs.如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个.安装 (全局安装加 -g) :1npm install http-server
+使用 :在站点目录下开启命令行输入1node http-server
+使用于package.json1&amp;quot;scripts&amp;quot;: &amp;#1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="零配置命令行HTTP服务器">
 <meta property="og:url" content="http://FernAbby.com/2017/05/09/零配置命令行HTTP服务器/index.html">
 <meta property="og:site_name" content="FernAbby's Notes">
-<meta property="og:description" content="http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs.如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个.安装 (全局安装加 -g) : npm install http-server使用 :在站点目录下开启命令行输入 node http-server使用于package.json “scripts”: {     “start”:">
-<meta property="og:updated_time" content="2017-05-09T07:59:34.000Z">
+<meta property="og:description" content="http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs.如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个.安装 (全局安装加 -g) :1npm install http-server
+使用 :在站点目录下开启命令行输入1node http-server
+使用于package.json1&amp;quot;scripts&amp;quot;: &amp;#1">
+<meta property="og:updated_time" content="2017-05-09T08:02:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="零配置命令行HTTP服务器">
-<meta name="twitter:description" content="http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs.如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个.安装 (全局安装加 -g) : npm install http-server使用 :在站点目录下开启命令行输入 node http-server使用于package.json “scripts”: {     “start”:">
+<meta name="twitter:description" content="http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs.如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个.安装 (全局安装加 -g) :1npm install http-server
+使用 :在站点目录下开启命令行输入1node http-server
+使用于package.json1&amp;quot;scripts&amp;quot;: &amp;#1">
 
 
 
@@ -365,7 +371,10 @@
       
 
       
-        <p>http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs.<br>如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个.<br>安装 (全局安装加 -g) :<br> npm install http-server<br>使用 :<br>在站点目录下开启命令行输入<br> node http-server<br>使用于package.json<br> “scripts”: {     “start”: “http-server -a 0.0.0.0 -p 8000”, }<br>参数 :<br>复制代码<br>-p 端口号 (默认 8080)<br>-a IP 地址 (默认 0.0.0.0)<br>-d 显示目录列表 (默认 ‘True’)<br>-i 显示 autoIndex (默认 ‘True’)<br>-e or –ext 如果没有提供默认的文件扩展名(默认 ‘html’)<br>-s or –silent 禁止日志信息输出–cors 启用 CORS via the Access-Control-Allow-Origin header<br>-o 在开始服务后打开浏览器<br>-h or –help 打印列表并退出<br>-c 为 cache-control max-age header 设置Cache time(秒) , e.g. -c10 for 10 seconds (defaults to ‘3600’). 禁用 caching, 则使用 -c-1.</p>
+        <p>http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs.<br>如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个.<br>安装 (全局安装加 -g) :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install http-server</div></pre></td></tr></table></figure></p>
+<p>使用 :<br>在站点目录下开启命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node http-server</div></pre></td></tr></table></figure></p>
+<p>使用于package.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;     &quot;start&quot;: &quot;http-server -a 0.0.0.0 -p 8000&quot;, &#125;</div></pre></td></tr></table></figure></p>
+<p>参数 :<br>复制代码<br>-p 端口号 (默认 8080)<br>-a IP 地址 (默认 0.0.0.0)<br>-d 显示目录列表 (默认 ‘True’)<br>-i 显示 autoIndex (默认 ‘True’)<br>-e or –ext 如果没有提供默认的文件扩展名(默认 ‘html’)<br>-s or –silent 禁止日志信息输出–cors 启用 CORS via the Access-Control-Allow-Origin header<br>-o 在开始服务后打开浏览器<br>-h or –help 打印列表并退出<br>-c 为 cache-control max-age header 设置Cache time(秒) , e.g. -c10 for 10 seconds (defaults to ‘3600’). 禁用 caching, 则使用 -c-1.</p>
 
       
     </div>
